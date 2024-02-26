@@ -62,7 +62,7 @@ export default function likesAndComments(post, fullPost = false) {
       "class",
       "text-sm font-medium md:text-base md:font-normal"
     );
-    container.setAttribute("class", "pr-12");
+    container.classList.add("pr-12");
     viewComments.append(viewCommentsText);
     container.appendChild(viewComments);
   }

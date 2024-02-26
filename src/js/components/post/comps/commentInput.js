@@ -2,15 +2,17 @@ import requests from "../../../api/auth/requests/index.js";
 
 export default function commentInput(post) {
   const container = document.createElement("div");
-  container.className = "mt-4 flex items-center";
+  container.setAttribute("class", "mt-4 flex items-center");
 
   const input = document.createElement("textarea");
   input.placeholder = "Add a comment...";
-  input.className =
-    "flex-grow border p-2 rounded-md outline-none h-16 resize-none";
+  input.setAttribute(
+    "class",
+    "flex-grow border p-2 rounded-md outline-none h-16 resize-none"
+  );
 
   const button = document.createElement("button");
-  button.className = "ml-4 sm:ml-6";
+  button.setAttribute("class", "ml-4 sm:ml-6");
 
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   svg.setAttributeNS(null, "fill", "none");
