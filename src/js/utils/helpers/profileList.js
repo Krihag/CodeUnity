@@ -30,7 +30,7 @@ function singleProfile(profile) {
   const profileContainer = document.createElement("div");
   profileContainer.setAttribute(
     "class",
-    "flex items-center justify-between border-b px-8 2xl:px-10 hover:bg-gray-100"
+    "flex items-center justify-between border-b px-8 2xl:px-10 hover:bg-gray-100 gap-4"
   );
   const innerDiv = document.createElement("div");
   innerDiv.setAttribute(
