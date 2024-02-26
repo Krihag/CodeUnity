@@ -12,9 +12,12 @@ export default function dropDownItem(item, post) {
   spanText.textContent = item.text;
   if (item.icon) {
     const icon = document.createElement("i");
-    icon.setAttribute("class",
+    icon.classList.add(
       ...item.icon,
-      "text-xl text-secondary mr-5 w-10",
+      "text-xl",
+      "text-secondary",
+      "mr-5",
+      "w-10"
     );
     choice.append(icon);
   }
