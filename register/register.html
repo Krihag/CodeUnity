@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta description="Ready to join the coding community? Register now to connect with fellow enthusiasts, share ideas, and unlock endless possibilities. Dive into innovation and collaboration on our platform. Whether you're a beginner or expert, start your coding journey with us today.">
-    
+
     <title>CodeUnity | Register</title>
 
     <link rel="stylesheet" href="/dist/tailwind.css" />
@@ -32,79 +32,70 @@
   <body>
 
 <main class="flex mx-auto gap-32 min-h-screen">
-      <section class="xl:flex justify-start w-full gap-10 xl:max-h-screen">
-
-<!--BILDE-->
-        <div class="w-full lg:block xl:w-1/2">
-          <img
-            class="w-full xl:h-screen object-cover h-44 md:h-56 lg:h-72"
-            src="/images/register2.jpg"
+  <section class="xl:flex justify-start w-full gap-10 xl:max-h-screen">
+    
+<!-- Side image -->
+      <div class="w-full lg:block xl:w-1/2">
+        <img
+          class="w-full xl:h-screen object-cover h-44 md:h-56 lg:h-72"
+          src="/images/register2.jpg"
             alt="">
         </div>
 
-<!--BILDE-->
-
+<!-- Steps -->
+    
       <div class="py-10 lg:py-14 lg:max-h-full max-w-3xl xl:max-w-2xl 2xl:max-w-3xl px-10 2xl:ml-16 mx-auto xl:mx-0 xl:mb-12">
-        <div class="flex relative h-10 items-center">
-          <span
-            class="h-8 w-8 2xl:h-10 2xl:w-10 rounded-full bg-light flex items-center justify-center text-primary"
-            >1</span
-          >
-          <span class="border-2 border-secondary w-8 place-self-center"></span>
-          <span
-            class="h-8 w-8 2xl:h-10 2xl:w-10 rounded-full bg-secondary flex items-center justify-center text-white"
-            >2</span
-          >
+          <div class="flex relative h-10 items-center">
+            <span
+              class="h-8 w-8 2xl:h-10 2xl:w-10 rounded-full bg-light flex items-center justify-center text-primary">1</span>
+            <span class="border-2 border-secondary w-8 place-self-center"></span>
+            <span class="h-8 w-8 2xl:h-10 2xl:w-10 rounded-full bg-secondary flex items-center justify-center text-white">2</span>
+          </div>
+
+<!-- Register intro -->
+    
+          <div class="pt-8 sm:pt-8 2xl:pt-16">
+            <h1 class="text-2xl 2xl:text-4xl font-bold">Customize profile.</h1>
+            <p class="mt-4 mb-2 2xl:2xl:text-lg 2xl:my-6 leading-relaxed">
+                Welcome to the second step of your registration process! In this step, you'll set up your profile by selecting a 
+                profile image, banner image, and writing a bio to introduce yourself to the community.
+            </p>
+          </div>
+    
+<!-- Form section -->
+
+          <div class="lg:overflow-auto scrollContainer mt-8 2xl:mt-10">
+            <form id="registration-form" class="gap-8 xl:pr-10 2xl:pr-16">
+    
+              <div class="flex flex-col">
+                <figure class="mb-8 xl:h-52 2xl:h-60">
+                    <img src="/images/image.png" alt="" class="object-cover h-52 w-52 2xl:h-60 2xl:w-60 rounded-full">
+                </figure>
+                <label for="profileImage" class="2xl:text-lg text-gray-700">Select a profile image:</label>
+                <input type="text" id="profileImage" name="profileImage" class="py-1 px-3 rounded-sm border 2xl:text-lg mt-1.5">
+              </div>
+    
+              <div class="flex flex-col mb-2 2xl:my-2">
+                <figure class="my-6">
+                    <img src="/images/banner.png" alt="" class="object-cover rounded">
+                </figure>
+                <label for="profileBanner" class="2xl:text-lg text-gray-700">Select a banner:</label>
+                <input type="text" id="profileBanner" name="profileBanner" required class="py-1 px-3 rounded-sm border 2xl:text-lg mt-1.5" />
+              </div>
+    
+              <div class="flex flex-col my-6">
+                <label for="biography" class="2xl:text-lg text-gray-700">Biography:</label>
+                <textarea name="biography" id="biography" class="resize-none py-1 px-3 rounded-sm border 2xl:text-lg mt-1.5 h-44"></textarea>
+              </div>
+    
+              <div class="flex justify-between mt-4 2xl:mt-10">
+                <a href="/profile/index.html" class="text-sm sm:text-base 2xl:text-lg flex gap-5  text-secondary items-center">Skip this step <i class="fa-solid fa-arrow-right"></i></a>
+                <button class="bg-secondary p-3 mt-2 w-32 text-white rounded-md text-center">Register</button>
+              </div>
+            </form>
+          </div>
         </div>
-
-        <div class="pt-8 sm:pt-8 2xl:pt-16">
-          <h1 class="text-2xl 2xl:text-4xl font-bold">Customize profile.</h1>
-          <p class="mt-4 mb-2 2xl:2xl:text-lg 2xl:my-6 leading-relaxed">
-              Welcome to the second step of your registration process! In this step, you'll set up your profile by selecting a 
-              profile image, banner image, and writing a bio to introduce yourself to the community.
-          </p>
-        </div>
-        <div class="lg:overflow-auto scrollContainer mt-8 2xl:mt-10">
-
-        <form id="registration-form" class="gap-8 xl:pr-10 2xl:pr-16">
-          <div class="flex flex-col">
-      
-            <figure class="mb-8 xl:h-52 2xl:h-60">
-                <img src="/images/image.png" alt="" class="object-cover h-52 w-52 2xl:h-60 2xl:w-60 rounded-full">
-            </figure>
-            <label for="profileImage" class="2xl:text-lg text-gray-700">Select a profile image:</label>
-            <input type="text" id="profileImage" name="profileImage" 
-                class="py-1 px-3 rounded-sm border 2xl:text-lg mt-1.5">
-        </div>
-
-        <div class="flex flex-col mb-2 2xl:my-2">
- 
-          <figure class="my-6">
-              <img src="/images/banner.png" alt="" class="object-cover rounded">
-              
-          </figure>
-          <label for="profileBanner" class="2xl:text-lg text-gray-700">Select a banner:</label>
-          <input type="text" id="profileBanner" name="profileBanner" required class="py-1 px-3 rounded-sm border 2xl:text-lg mt-1.5" />
-      </div>
-
-      <div class="flex flex-col my-6">
-        <label for="biography" class="2xl:text-lg text-gray-700">Biography:</label>
-        <textarea name="biography" id="biography" class="resize-none py-1 px-3 rounded-sm border 2xl:text-lg mt-1.5 h-44"></textarea>
-    </div>
-
-    <div class="flex justify-between mt-4 2xl:mt-10">
-    <a href="/profile/index.html" class="text-sm sm:text-base 2xl:text-lg flex gap-5  text-secondary items-center">Skip this step <i class="fa-solid fa-arrow-right"></i></a>
-  <button class="bg-secondary p-3 mt-2 w-32 text-white rounded-md text-center">Register</button>
-  </div>
-</div>
-  
-  </div>
-</form>
-      </div>
-        <div>
       </section>
-
-      
     </main>
 
  <!--Footer-->
