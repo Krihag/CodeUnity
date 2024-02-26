@@ -1,3 +1,7 @@
 import pageSpecific from "./pageSpecific.js";
 
-pageSpecific();
+await pageSpecific();
+console.log("test");
+window.onload = function () {
+  console.log("test");
+};

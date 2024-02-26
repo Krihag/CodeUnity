@@ -2,7 +2,8 @@ const profileFilter = "_following=true&_followers=true&_posts=true";
 
 export default {
   // - all profiles
-  all: (limit = 100) => `/social/profiles?${profileFilter}&limit=${limit}`,
+  all: (limit = 100, page = 1) =>
+    `/social/profiles?${profileFilter}&limit=${limit}&page=${page}`,
 
   // - specific profile by name - if not name is provided, it will return null
   byName: (name) => (name ? `/social/profiles/${name}?${profileFilter}` : null),
