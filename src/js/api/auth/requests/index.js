@@ -116,6 +116,28 @@ export default {
     }
   },
 
+  // delete comment
+
+  deleteComment: async function (
+    commentId,
+    postId,
+    message = "Comment deleted"
+  ) {
+    const data = request(
+      null,
+      endpoints.posts.comment(postId, commentId),
+      headers.authWithoutContent(),
+      "delete",
+      message
+    );
+    const response = await data.fetch();
+
+    if (response == "deleted") {
+      modal.close();
+      updates.posts();
+    }
+  },
+
   // react to post
   react: async function (id) {
     const data = request(
