@@ -2,12 +2,12 @@ import dropdown from "../dropdown/index.js";
 
 export default function profileMedia(profile, isOwner) {
   const container = document.createElement("div");
-  container.classList.add("relative", "flex", "items-center", "flex-col");
+  container.setAttribute("class", "relative", "flex", "items-center", "flex-col");
 
   const profileImage = document.createElement("img");
   profileImage.src = profile.avatar.url;
   profileImage.alt = profile.avatar.alt;
-  profileImage.classList.add(
+  profileImage.setAttribute("class",
     "rounded-full",
     "relative",
     "border",

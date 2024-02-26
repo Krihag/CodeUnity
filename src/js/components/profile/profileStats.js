@@ -3,7 +3,7 @@ import toggleContainer from "../dropdown/toggleContainer.js";
 
 export default async function profileStats(profile, isOwner = false) {
   const container = document.createElement("div");
-  container.classList.add(
+  container.setAttribute("class", 
     "flex",
     "gap-12",
     "sm:gap-20",
@@ -14,15 +14,15 @@ export default async function profileStats(profile, isOwner = false) {
 
   // Posts
   const posts = document.createElement("div");
-  posts.classList.add("text-center", "text-primary", "flex", "flex-col");
+  posts.setAttribute("class", "text-center", "text-primary", "flex", "flex-col");
 
   const xPosts = document.createElement("strong");
-  xPosts.classList.add("md:text-lg");
+  xPosts.setAttribute("class", "md:text-lg");
   xPosts.textContent = profile._count.posts;
   xPosts.setAttribute("id", "posts-count");
 
   const xPostsText = document.createElement("span");
-  xPostsText.classList.add("md:text-lg");
+  xPostsText.setAttribute("class", "md:text-lg");
   xPostsText.textContent = "Posts";
 
   posts.append(xPosts, xPostsText);
@@ -35,12 +35,12 @@ export default async function profileStats(profile, isOwner = false) {
   );
 
   const xFollowers = document.createElement("strong");
-  xFollowers.classList.add("md:text-lg");
+  xFollowers.setAttribute("class", "md:text-lg");
   xFollowers.setAttribute("id", "followers-count");
   xFollowers.textContent = profile._count.followers;
 
   const xFollowersText = document.createElement("span");
-  xFollowersText.classList.add("md:text-lg");
+  xFollowersText.setAttribute("class", "md:text-lg");
 
   xFollowersText.textContent = "Followers";
 
@@ -48,7 +48,7 @@ export default async function profileStats(profile, isOwner = false) {
 
   // Following
   const following = document.createElement("div");
-  following.classList.add(
+  following.setAttribute("class", 
     "text-center",
     "text-primary",
     "flex",
@@ -57,12 +57,12 @@ export default async function profileStats(profile, isOwner = false) {
   );
 
   const xFollowing = document.createElement("strong");
-  xFollowing.classList.add("md:text-lg");
+  xFollowing.setAttribute("class", "md:text-lg");
   xFollowing.textContent = profile._count.following;
   xFollowing.setAttribute("id", "following-count");
 
   const xFollowingText = document.createElement("span");
-  xFollowingText.classList.add("md:text-lg");
+  xFollowingText.setAttribute("class", "md:text-lg");
   xFollowingText.textContent = "Following";
 
   following.append(xFollowing, xFollowingText);

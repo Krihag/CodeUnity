@@ -7,7 +7,7 @@ export default function optionsButton(ele) {
   const optionTwo = ele.optionTwo ? ele.optionTwo.text : "Save";
 
   const buttonsContainer = document.createElement("div");
-  buttonsContainer.classList.add(
+  buttonsContainer.setAttribute("class",
     "flex",
     "gap-4",
     "mt-2",
@@ -18,7 +18,7 @@ export default function optionsButton(ele) {
 
   const firstButton = document.createElement("button");
   firstButton.type = "button";
-  firstButton.classList.add(
+  firstButton.setAttribute("class",
     "rounded",
     "border",
     "flex",
@@ -37,7 +37,7 @@ export default function optionsButton(ele) {
 
   const secondButton = document.createElement("button");
   secondButton.type = "submit";
-  secondButton.classList.add(
+  secondButton.setAttribute("class",
     "rounded",
     "bg-secondary",
     "flex",
@@ -52,8 +52,7 @@ export default function optionsButton(ele) {
   );
   secondButton.textContent = optionTwo;
 
-  buttonsContainer.appendChild(firstButton);
-  buttonsContainer.appendChild(secondButton);
+  buttonsContainer.append(firstButton, secondButton);
 
   if (optionTwo == "Delete") {
     secondButton.addEventListener("click", async function (e) {

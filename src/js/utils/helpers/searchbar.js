@@ -36,7 +36,6 @@ function result(post) {
   );
   container.href = `/post/?id=${post.id}`;
 
-  // Create the title div and set its text content
   const titleDiv = document.createElement("div");
   titleDiv.textContent = post.title;
 
@@ -45,9 +44,8 @@ function result(post) {
   const usernameSpan = document.createElement("span");
   usernameSpan.setAttribute("class", "font-medium text-secondary");
   usernameSpan.textContent = post.author.name;
-  username.appendChild(usernameSpan);
-
-  container.appendChild(titleDiv);
-  container.appendChild(username);
+  
+  username.append(usernameSpan);
+  container.append(titleDiv, username);
   return container;
 }

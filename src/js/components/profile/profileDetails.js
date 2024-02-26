@@ -2,7 +2,7 @@ export default function profileDetails(profile) {
     const container = document.createElement("div");
     
     const profileName = document.createElement("h1");
-    profileName.classList.add(
+    profileName.setAttribute("class", 
         "text-xl",
         "md:text-2xl", 
         "font-medium", 
@@ -12,14 +12,14 @@ export default function profileDetails(profile) {
     profileName.textContent = profile.name;
 
     const profileEmail = document.createElement("h2");
-    profileEmail.classList.add(
+    profileEmail.setAttribute("class",
         "md:text-xl", 
         "muted"
     );
     profileEmail.textContent = profile.email;
 
     const profileBio = document.createElement("p");
-    profileBio.classList.add(
+    profileBio.setAttribute("class",
         "text-lg", 
         "py-4", 
         "sm:py-6"

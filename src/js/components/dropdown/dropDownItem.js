@@ -3,8 +3,9 @@ import itemOnClick from "./itemOnClick.js";
 export default function dropDownItem(item, post) {
   const choice = document.createElement("button");
 
-  !item.first && choice.classList.add("border-t");
-  choice.classList.add(
+  !item.first && choice.setAttribute("class", "border-t");
+  choice.setAttribute(
+    "class",
     "block",
     "w-full",
     "text-left",
@@ -19,7 +20,7 @@ export default function dropDownItem(item, post) {
   spanText.textContent = item.text;
   if (item.icon) {
     const icon = document.createElement("i");
-    icon.classList.add(
+    icon.setAttribute("class",
       ...item.icon,
       "text-xl",
       "text-secondary",

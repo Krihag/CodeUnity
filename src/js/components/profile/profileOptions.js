@@ -8,7 +8,7 @@ export default function profileOptions(profile, isOwner, user) {
 
   if (isOwner) {
     const editProfileBtn = document.createElement("button");
-    editProfileBtn.classList.add(
+    editProfileBtn.setAttribute("class",
       "flex",
       "items-center",
       "gap-3",
@@ -36,7 +36,7 @@ export default function profileOptions(profile, isOwner, user) {
     });
 
     const newPost = document.createElement("button");
-    newPost.classList.add(
+    newPost.setAttribute("class",
       "flex",
       "items-center",
       "gap-3",
@@ -64,7 +64,7 @@ export default function profileOptions(profile, isOwner, user) {
       : "Follow";
 
     followButton.textContent = ifFollowing;
-    followButton.classList.add(
+    followButton.setAttribute("class",
       "flex",
       "items-center",
       "justify-center",
@@ -81,7 +81,7 @@ export default function profileOptions(profile, isOwner, user) {
     );
 
     const messageButton = document.createElement("button");
-    messageButton.classList.add(
+    messageButton.setAttribute("class",
       "flex",
       "items-center",
       "gap-3",

@@ -3,10 +3,10 @@ const sidebarProfileLink = document.querySelector("#sidebarProfileLink");
 
 export default function sidebarDetails(profile) {
   const sidebarContent = document.createElement("div");
-  sidebarContent.classList.add("relative");
+  sidebarContent.setAttribute("class", "relative");
 
   const sidebarImage = document.createElement("img");
-  sidebarImage.classList.add(
+  sidebarImage.setAttribute("class",
     "2xl:w-28",
     "2xl:h-28",
     "w-20",
@@ -21,7 +21,7 @@ export default function sidebarDetails(profile) {
   sidebarImage.setAttribute("id", "sidebar-avatar");
 
   const sidebarStatus = document.createElement("span");
-  sidebarStatus.classList.add(
+  sidebarStatus.setAttribute("class",
     "active",
     "rounded-full",
     "bg-green-700",
@@ -39,16 +39,12 @@ export default function sidebarDetails(profile) {
   sidebarContent.append(sidebarImage, sidebarStatus);
 
   const sidebarName = document.createElement("strong");
-  sidebarName.classList.add("text-white", "mt-3", "2xl:text-lg");
+  sidebarName.setAttribute("class", "text-white", "mt-3", "2xl:text-lg");
   sidebarName.textContent = profile.name;
 
   const changeStatus = document.createElement("button");
-  changeStatus.classList.add("text-white", "2xl:mt-1", "status", "text-sm");
+  changeStatus.setAttribute("class", "text-white", "2xl:mt-1", "status", "text-sm");
   changeStatus.textContent = "Change status";
-
-  // changeStatus.addEventListener('click', function (){
-
-  // })
 
   sidebarContainer.append(sidebarContent, sidebarName, changeStatus);
 

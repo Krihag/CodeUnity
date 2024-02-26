@@ -25,6 +25,5 @@ export default function confirmation(text, time = 5000) {
   confirmation.append(confirmationBox, confirmationText);
   document.body.appendChild(confirmation);
 
-  //Removes the confirmation alert after a set time
   setTimeout(() => confirmation.remove(), time);
 }
