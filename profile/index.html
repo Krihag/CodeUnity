@@ -3,34 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta description="">
     <title>CodeUnity | Your profile</title>
 
-    <script
-      src="https://kit.fontawesome.com/b515e79b0f.js"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="../dist/tailwind.css">
+    <link rel="stylesheet" href="../src/css/customStyles.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
+    <script src="https://kit.fontawesome.com/b515e79b0f.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="/dist/tailwind.css" />
-    <link rel="stylesheet" href="/src/css/style.css" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/images/favicon.png"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="../src/images/favicon.ico">
 
     <script type="module" src="/src/js/pages/profile/index.js"></script>
   </head>
 
   <body>
-    <!--Sidebar-->
+  
+<!--Sidebar-->
 
     <aside
       class="hidden z-30 bg-primary w-full md:w-24 max-w-64 h-screen max-h-svh fixed lg:flex flex-col items-center justify-between gap-6"
@@ -103,7 +95,8 @@
       </button>
     </aside>
 
-    <!-- mobile nav -->
+<!-- Mobile navigationbar -->
+
     <div
       class="bg-primary w-full fixed bottom-0 h-16 sm:h-20 md:h-20 items-center flex lg:hidden"
     >
@@ -174,7 +167,7 @@
       </div>
     </div>
 
-    <!--Header-->
+<!--Header-->
 
     <header
       class="px-3 sm:px-8 lg:pl-36 py-4 lg:py-8 max-w-3xl lg:max-w-5xl 2xl:max-w-full mx-auto 2xl:pr-12 wrapper"
@@ -246,24 +239,27 @@
       </div>
     </header>
 
-    <!--Banner & Profile Image-->
+<!-- Banner & Profile Image -->
 
     <div class="h-52 sm:h-64 md:h-72 lg:h-80 2xl:h-96" id="banner"></div>
     <main class="px-3 sm:px-8 md:px-12 lg:px-32">
-      <!--Profile information-->
 
-      <section
-        class="max-w-5xl 2xl:max-w-6xl mt-20 sm:mt-24 lg:mt-20 flex flex-col mx-auto lg:pl-24"
-        id="profileContainer"
-      ></section>
+<!-- Profile information -->
 
-      <!--Posts-->
+    <section
+      class="max-w-5xl 2xl:max-w-6xl mt-20 sm:mt-24 lg:mt-20 flex flex-col mx-auto lg:pl-24"
+      id="profileContainer"
+    ></section>
+
+<!-- Posts -->
 
       <section
         class="posts max-w-5xl 2xl:max-w-6xl mt-12 md:mt-16 mx-auto lg:pl-24"
         id="posts-container"
       ></section>
     </main>
+
+<!-- Modal container -->
 
     <div
       id="modal-container"
@@ -282,7 +278,7 @@
       </div>
     </div>
 
-    <!--Footer-->
+<!--Footer-->
 
     <footer class="bg-primary text-white pt-10 mt-12 md:mt-28">
       <div
