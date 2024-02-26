@@ -2,36 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta description="Connect with your coding community on our feed page. Share updates, offer feedback, and engage with friends' posts effortlessly. Join a vibrant ecosystem of tech enthusiasts, exchanging ideas and inspiration in real-time.">
+    
     <title>CodeUnity | Feed</title>
 
-    <script
-      src="https://kit.fontawesome.com/b515e79b0f.js"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="../dist/tailwind.css">
+    <link rel="stylesheet" href="../src/css/customStyles.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
+    <script src="https://kit.fontawesome.com/b515e79b0f.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="/dist/tailwind.css" />
-    <link rel="stylesheet" href="/src/css/style.css" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/images/favicon.png"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="../src/images/favicon.ico">
 
     <script type="module" src="/src/js/pages/feed/index.js"></script>
-    <!-- <script type="module" src="/sortBy.js"></script> -->
   </head>
 
   <body>
-    <!--Sidebar-->
+  
+  <!--Sidebar-->
 
     <aside
       class="hidden z-30 bg-primary w-full md:w-24 max-w-64 h-screen max-h-svh fixed lg:flex flex-col items-center justify-between gap-6"
@@ -104,7 +96,8 @@
       </button>
     </aside>
 
-    <!-- mobile nav -->
+<!-- Mobile navigationbar -->
+
     <div
       class="bg-primary w-full fixed bottom-0 h-16 sm:h-20 md:h-20 items-center flex lg:hidden"
     >
@@ -175,7 +168,7 @@
       </div>
     </div>
 
-    <!--Header-->
+  <!--Header-->
 
     <header
       class="px-3 sm:px-8 lg:pl-36 py-4 lg:py-8 max-w-3xl lg:max-w-5xl 2xl:max-w-full mx-auto 2xl:pr-12 wrapper"
@@ -246,7 +239,7 @@
       </div>
     </header>
 
-    <!--Latest posts-->
+<!--Latest posts-->
 
     <div
       class="flex justify-between px-3 sm:px-8 lg:pl-36 md:py-4 lg:py-8 max-w-3xl lg:max-w-5xl 2xl:max-w-full mx-auto 2xl:pr-12 wrapper gap-16"
@@ -293,13 +286,14 @@
         <div class="mt-10" id="posts-container"></div>
       </main>
 
-      <!-- Discover-->
+<!-- Discover-->
 
       <aside class="xl:max-w-sm 2xl:max-w-lg hidden xl:block">
         <h2 class="text-primary text-2xl mt-4 mb-8 font-medium">Discover</h2>
         <img src="/images/discover.jpg" alt="" class="customBorder" />
 
-        <!--CONNECT WITH OTHERS (MAX 5 STK)-->
+<!-- Connect with others -->
+
         <section class="bg-white mt-6 2xl:mt-10 customBorder py-6 2xl:py-8">
           <h3 class="text-xl font-medium px-10 pb-3">Connect with others</h3>
           <div id="connect-profiles"></div>
@@ -310,7 +304,8 @@
           </button>
         </section>
 
-        <!--POPULAR TAGS (5 STK)-->
+<!-- Popular tags -->
+
         <section
           class="bg-white mt-6 2xl:mt-10 customBorder px-8 py-8 2xl:px-10 2xl:py-10"
         >
@@ -394,7 +389,7 @@
       </aside>
     </div>
 
-    <!--Footer-->
+<!--Footer-->
 
     <footer class="bg-primary text-white pt-10 mt-12 md:mt-28">
       <div
