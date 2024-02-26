@@ -67,8 +67,8 @@ export default async function postLikedBy(post, mainContainer) {
   }
 
   contentContainer.append(imgContainer, textLikedBy);
-  container.appendChild(contentContainer);
-  mainContainer.appendChild(container);
+  container.append(contentContainer);
+  mainContainer.append(container);
 
   return container;
 }

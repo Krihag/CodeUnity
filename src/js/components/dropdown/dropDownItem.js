@@ -6,15 +6,7 @@ export default function dropDownItem(item, post) {
   !item.first && choice.setAttribute("class", "border-t");
   choice.setAttribute(
     "class",
-    "block",
-    "w-full",
-    "text-left",
-    "px-4",
-    "py-3",
-    "text-sm",
-    "text-gray-700",
-    "hover:bg-light",
-    "hover:text-gray-900"
+    "block w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-light hover:text-gray-900"
   );
   const spanText = document.createElement("span");
   spanText.textContent = item.text;
@@ -22,10 +14,7 @@ export default function dropDownItem(item, post) {
     const icon = document.createElement("i");
     icon.setAttribute("class",
       ...item.icon,
-      "text-xl",
-      "text-secondary",
-      "mr-5",
-      "w-10"
+      "text-xl text-secondary mr-5 w-10",
     );
     choice.append(icon);
   }

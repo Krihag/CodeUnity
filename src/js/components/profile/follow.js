@@ -83,7 +83,7 @@ export default async function follow(profile, follow = false, isOwner = false) {
       const button = document.createElement("button");
       button.setAttribute(
         "class",
-        "flex items-center p-2  md:px-6 rounded border border-primary hover:bg-light hover:border-light " +
+        "flex items-center p-2 md:px-6 rounded border border-primary hover:bg-light hover:border-light " +
           bgColor
       );
 

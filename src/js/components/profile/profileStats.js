@@ -4,17 +4,12 @@ import toggleContainer from "../dropdown/toggleContainer.js";
 export default async function profileStats(profile, isOwner = false) {
   const container = document.createElement("div");
   container.setAttribute("class", 
-    "flex",
-    "gap-12",
-    "sm:gap-20",
-    "md:gap-10",
-    "lg:gap-20",
-    "relative"
+    "flex gap-12 sm:gap-20 md:gap-10 lg:gap-20 relative"
   );
 
   // Posts
   const posts = document.createElement("div");
-  posts.setAttribute("class", "text-center", "text-primary", "flex", "flex-col");
+  posts.setAttribute("class", "text-center text-primary flex flex-col");
 
   const xPosts = document.createElement("strong");
   xPosts.setAttribute("class", "md:text-lg");
@@ -41,7 +36,6 @@ export default async function profileStats(profile, isOwner = false) {
 
   const xFollowersText = document.createElement("span");
   xFollowersText.setAttribute("class", "md:text-lg");
-
   xFollowersText.textContent = "Followers";
 
   followers.append(xFollowers, xFollowersText);
@@ -49,11 +43,7 @@ export default async function profileStats(profile, isOwner = false) {
   // Following
   const following = document.createElement("div");
   following.setAttribute("class", 
-    "text-center",
-    "text-primary",
-    "flex",
-    "flex-col",
-    "cursor-pointer"
+    "text-center text-primary flex flex-col cursor-pointer"
   );
 
   const xFollowing = document.createElement("strong");

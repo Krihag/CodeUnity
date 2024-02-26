@@ -5,7 +5,6 @@ export default function commentInput(post) {
   container.className = "mt-4 flex items-center";
 
   const input = document.createElement("textarea");
-  // input.type = "textarea";
   input.placeholder = "Add a comment...";
   input.className =
     "flex-grow border p-2 rounded-md outline-none h-16 resize-none";

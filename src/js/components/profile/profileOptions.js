@@ -4,25 +4,12 @@ import editProfile from "../../components/modal/specificModals/editProfile.js";
 
 export default function profileOptions(profile, isOwner, user) {
   const container = document.createElement("div");
-  container.setAttribute("class", "flex justify-start md:justify-end gap-x-4")
+  container.setAttribute("class", "flex justify-start md:justify-end gap-x-4");
 
   if (isOwner) {
     const editProfileBtn = document.createElement("button");
     editProfileBtn.setAttribute("class",
-      "flex",
-      "items-center",
-      "gap-3",
-      "py-3",
-      "px-6",
-      "lg:px-8",
-      "lg:py-4",
-      "rounded",
-      "border",
-      "border-primary",
-      "hover:bg-light",
-      "hover:border-light",
-      "text-sm",
-      "sm:text-base"
+      "flex items-center gap-3 py-3 px-6 lg:px-8 lg:py-4 rounded border border-primary hover:bg-light hover:border-light text-sm sm:text-base"
     );
     editProfileBtn.textContent = "Edit profile";
 
@@ -37,20 +24,7 @@ export default function profileOptions(profile, isOwner, user) {
 
     const newPost = document.createElement("button");
     newPost.setAttribute("class",
-      "flex",
-      "items-center",
-      "gap-3",
-      "text-white",
-      "bg-secondary",
-      "py-3",
-      "px-6",
-      "lg:py-4",
-      "lg:px-8",
-      "rounded",
-      "hover:bg-light",
-      "hover:text-primary",
-      "text-sm",
-      "sm:text-base"
+      "flex items-center gap-3 text-white bg-secondary py-3 px-6 lg:py-4 lg:px-8 rounded hover:bg-light hover:text-primary text-sm sm:text-base"
     );
     newPost.textContent = "New post";
     newPost.addEventListener("click", createPost);
@@ -65,33 +39,12 @@ export default function profileOptions(profile, isOwner, user) {
 
     followButton.textContent = ifFollowing;
     followButton.setAttribute("class",
-      "flex",
-      "items-center",
-      "justify-center",
-      "gap-3",
-      "text-white",
-      `bg-secondary`,
-      "py-4",
-      "px-6",
-      "rounded",
-      "hover:bg-light",
-      "hover:text-primary",
-      "duration-500",
-      "w-32"
+      "flex items-center justify-center gap-3 text-white bg-secondary py-4 px-6 rounded hover:bg-light hover:text-primary duration-500 w-32"
     );
 
     const messageButton = document.createElement("button");
     messageButton.setAttribute("class",
-      "flex",
-      "items-center",
-      "gap-3",
-      "py-4",
-      "px-6",
-      "rounded",
-      "border",
-      "border-primary",
-      "hover:bg-light",
-      "hover:border-light"
+      "flex items-center gap-3 py-4 px-6 rounded border border-primary hover:bg-light hover:border-light"
     );
     messageButton.textContent = "Message";
 
