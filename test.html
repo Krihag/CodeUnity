@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeUnity | Post-title</title>
+
+    <link rel="stylesheet" href="/dist/tailwind.css" />
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/b515e79b0f.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script defer src="/tags.js"></script>
+    <script defer src="/test.js"></script>
+  </head>
+
+  <body class="bg-gray-50">
+    <section
+      class="bg-white mx-auto max-w-3xl flex flex-col px-12 py-10 shadow-sm mt-10 rounded-lg"
+    >
+      <h2 class="text-2xl font-semibold mb-4">Edit post</h2>
+      <figure class="mt-2 mb-6">
+        <!--Bildet de har i innlegget sitt om det går an-->
+        <img
+          id="previewImage"
+          src="/images/china.png"
+          alt=""
+          class="rounded-md"
+        />
+      </figure>
+
+      <form action="" class="w-full">
+        <label for="title" class="text-lg">Title:</label>
+        <input
+          type="text"
+          id="title"
+          class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3"
+          placeholder="Their current title on the post"
+        />
+
+        <label for="description" class="text-lg opa">Description:</label>
+        <input
+          type="text"
+          id="description"
+          class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3"
+          placeholder="The current text within the description."
+        />
+
+        <label for="tags" class="text-lg">Tags:</label>
+
+        <div class="flex gap-4 flex-col">
+          <div class="w-1/2 flex h-14 rounded my-2">
+            <span
+              class="hashtag border border-r-0 w-16 flex items-center justify-center text-xl font-semibold"
+              >#</span
+            >
+            <input
+              type="text"
+              id="tags"
+              class="w-full border outline-none pl-3"
+              minlength="2"
+              maxlength="12"
+              pattern="[a-zA-Z0-9]+"
+              title="Must contain between 2-12 characters. Can only contain lower- and uppercase letters and numbers."
+            />
+            <button id="addTag" type="button" class="px-5 bg-light text-2xl">
+              +
+            </button>
+          </div>
+
+          <div id="tagContainer" class="flex gap-4"></div>
+          <!--Få med taggene de har lagt til med mulighet for å fjerne dem-->
+        </div>
+
+        <div class="flex gap-4 mt-6 justify-end">
+          <button
+            type="button"
+            class="rounded border flex items-center justify-center px-10 py-4 hover:shadow-md"
+          >
+            Cancel
+          </button>
+          <button
+            type="submit"
+            class="rounded bg-secondary flex items-center justify-center px-10 py-4 text-white hover:shadow-lg"
+          >
+            Save changes
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!--Hvis de trykker delete post-->
+
+    <section
+      class="deletePost bg-white mx-auto max-w-3xl flex flex-col p-12 shadow-sm mt-10 rounded-lg items-center"
+    >
+      <h2 class="text-2xl font-semibold mb-4">
+        Are you sure you want to delete post?
+      </h2>
+      <p class="px-8 py-1 text-center text-lg">
+        This action cannot be undone. The post and all associated data will be
+        permanently removed from the system. Please consider carefully before
+        proceeding.
+      </p>
+
+      <div class="flex gap-4 mt-6">
+        <button
+          type="button"
+          class="rounded border flex items-center justify-center px-10 py-4 hover:shadow-md"
+        >
+          Cancel
+        </button>
+        <button
+          type="submit"
+          class="rounded bg-secondary flex items-center justify-center px-10 py-4 text-white hover:shadow-lg"
+        >
+          Delete post
+        </button>
+      </div>
+    </section>
+
+    <div class="mb-40"></div>
+
+    <!--Etter at de har trykket delete. Tanken var at når de har trykket på delete knappen, så kommer denne inn og ut med opacity 0-100-->
+
+    <!-- <section class="alert flex max-w-86 px-6 py-4 rounded-md items-center gap-x-3 fixed bottom-28 left-36 bg-light">
+    <span class="h-12 w-12 rounded-full bg-white flex items-center justify-center">
+      <i class="fa-solid fa-check"></i>
+    </span>
+
+    <h3 class="text-lg text-primary">Post successfully deleted!</h3>
+  </section> -->
+
+    <!--EDIT PROFILE-->
+    <section
+      class="bg-white mx-auto max-w-3xl flex flex-col px-12 py-10 shadow-sm mt-10 rounded-lg"
+    >
+      <h2 class="text-2xl font-semibold mb-4">Edit profile</h2>
+      <div class="banner relative flex flex-col items-center">
+        <img src="/images/china.png" alt="" class="h-52 w-full object-cover" />
+        <img
+          src="/images/profile.png"
+          alt=""
+          class="absolute top-10 rounded-full h-52 max-w-52 object-cover border-2"
+        />
+      </div>
+
+      <form class="w-full mt-10">
+        <label for="profileImage" class="text-lg">Profile image</label>
+        <input
+          type="text"
+          id="profileImage"
+          class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3"
+          placeholder="Their current URL to the profile image."
+        />
+
+        <div class="flex gap-x-3 mb-5 items-center">
+          <input type="checkbox" id="defaultProfileImage" class="h-4 w-4" />
+          <label for="defaultProfileImage" class="text-gray-600"
+            >Use default profile image</label
+          >
+        </div>
+
+        <label for="imageCaption" class="text-lg">Profile image caption</label>
+        <input
+          type="text"
+          id="imageCaption"
+          class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3"
+          placeholder="The current image caption."
+        />
+
+        <label for="bannerImage" class="text-lg">Banner image</label>
+        <input
+          type="text"
+          id="bannerImage"
+          class="w-full border h-14 rounded mb-4 mt-2 outline-none pl-3"
+          placeholder="The current URL to the banner image."
+        />
+
+        <div class="flex gap-x-3 mb-5 items-center">
+          <input type="checkbox" id="defaultBannerImage" class="h-4 w-4" />
+          <label for="defaultBannerImage" class="text-gray-600"
+            >Use default banner image</label
+          >
+        </div>
+
+        <label for="biography" class="text-lg">Biography</label>
+        <textarea
+          name="biography"
+          id="biography"
+          class="resize-none h-32 w-full border mt-2 outline-none pl-3 pt-3 lg:text-lg"
+          placeholder="Their current biography."
+        ></textarea>
+
+        <div class="flex gap-4 mt-6 justify-end">
+          <button
+            type="button"
+            class="rounded border flex items-center justify-center px-10 py-4 hover:shadow-md"
+          >
+            Cancel
+          </button>
+          <button
+            type="submit"
+            class="rounded bg-secondary flex items-center justify-center px-10 py-4 text-white hover:shadow-lg"
+          >
+            Save changes
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!--FOLLOWERS-->
+
+    <!-- <section class="bg-white mt-10 rounded-md mx-auto max-w-lg px-10 pt-8">
+  <h3 class="text-xl font-medium">Followers</h3>
+
+  <div class="flex justify-between py-6 border-b items-center">
+    <div class="flex gap-5 lg:gap-10">
+      <img src="/images/profile.png" alt="" class="rounded-full h-12 w-12 lg:w-14 lg:h-14 object-cover">
+      <span>
+        <h4 class="lg:text-lg">Martine Midttveit</h4>
+        <h5 class="muted">View profile</h5>
+      </span>
+    </div>
+    <button class="flex items-center p-2 px-3 md:px-6 rounded border border-primary hover:bg-light hover:border-light">Follow</button>
+  </div> -->
+
+    <!-- <div class="flex justify-between py-6 border-b items-center">
+    <div class="flex gap-5 lg:gap-10">
+      <img src="/images/profile.png" alt="" class="rounded-full h-12 w-12 lg:w-14 lg:h-14 object-cover">
+      <span>
+        <h4 class="lg:text-lg">Martine Midttveit</h4>
+        <h5 class="muted">View profile</h5>
+      </span>
+    </div>
+    <button class="flex items-center p-2 px-3 md:px-6 rounded border border-primary hover:bg-light hover:border-light">Follow</button>
+  </div>
+
+  <div class="flex justify-between py-6 border-b items-center">
+    <div class="flex gap-5 lg:gap-10">
+      <img src="/images/profile.png" alt="" class="rounded-full h-12 w-12 lg:w-14 lg:h-14 object-cover">
+      <span>
+        <h4 class="lg:text-lg">Martine Midttveit</h4>
+        <h5 class="muted">View profile</h5>
+      </span>
+    </div>
+    <button class="flex items-center p-2 px-3 md:px-6 rounded border border-primary hover:bg-light hover:border-light">Follow</button>
+  </div>
+
+  <div class="flex justify-between py-6 border-b items-center">
+    <div class="flex gap-5 lg:gap-10">
+      <img src="/images/profile.png" alt="" class="rounded-full h-12 w-12 lg:w-14 lg:h-14 object-cover">
+      <span>
+        <h4 class="lg:text-lg">Martine Midttveit</h4>
+        <h5 class="muted">View profile</h5>
+      </span>
+    </div>
+    <button class="flex items-center p-2 px-3 md:px-6 rounded border border-primary hover:bg-light hover:border-light">Follow</button>
+  </div>
+
+  <div class="flex justify-between py-6 items-center">
+    <div class="flex gap-5 lg:gap-10">
+      <img src="/images/profile.png" alt="" class="rounded-full h-12 w-12 lg:w-14 lg:h-14 object-cover">
+      <span>
+        <h4 class="lg:text-lg">Martine Midttveit</h4>
+        <h5 class="muted">View profile</h5>
+      </span>
+    </div>
+    <button class="flex items-center p-2 px-3 md:px-6 rounded border border-primary hover:bg-light hover:border-light">Follow</button>
+  </div> -->
+    <!-- </section> -->
+
+    <div
+      class="bg-primary w-full fixed bottom-0 h-16 sm:h-20 md:h-20 items-center flex lg:hidden"
+    >
+      <nav class="flex mx-auto gap-8 sm:gap-20">
+        <a href="/feed/" class="home flex flex-col text-center">
+          <i class="fa-solid fa-house text-lg sm:text-xl md:text-2xl"></i>
+          <span class="text-xxs">HOME</span>
+        </a>
+
+        <a href="/profile/" class="profile flex flex-col text-center">
+          <i class="fa-solid fa-user text-lg sm:text-xl md:text-2xl"></i>
+          <span class="text-xxs">PROFILE</span>
+        </a>
+
+        <button class="addPost flex flex-col items-center cursor-pointer">
+          <i
+            class="fa-regular fa-square-plus text-lg sm:text-xl md:text-2xl"
+          ></i>
+          <span class="text-xxs">NEW POST</span>
+        </button>
+
+        <a href="/feed/index.html" class="explore flex flex-col text-center">
+          <i class="fa-solid fa-globe text-lg sm:text-xl md:text-2xl"></i>
+          <span class="text-xxs">EXPLORE</span>
+        </a>
+
+        <button
+          class="home flex flex-col items-center cursor-pointer"
+          id="hamburgerMobile"
+        >
+          <i class="fa-solid fa-bars text-lg sm:text-xl md:text-2xl"></i>
+          <span class="text-xxs">MORE</span>
+        </button>
+      </nav>
+
+      <div
+        class="bg-white w-full md:w-1/2 md:right-0 fixed bottom-16 sm:bottom-20 md:bottom-20 flex flex-col items-start py-3 px-5 border"
+        id="hamburgerOptions"
+      >
+        <div class="pb-3 pt-2 flex items-center justify-between w-full">
+          <p class="font-medium text-primary">MORE OPTIONS</p>
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </div>
+
+        <span class="border-b w-full"></span>
+
+        <button class="text-primary py-3 flex gap-6 items-center md:text-lg">
+          <i class="fa-solid fa-gear text-secondary"></i>
+          Settings
+        </button>
+        <span class="border-b w-full"></span>
+
+        <button class="text-primary py-3 flex gap-6 items-center md:text-lg">
+          <i class="fa-regular fa-envelope text-secondary"></i>
+          Inbox
+        </button>
+        <span class="border-b w-full"></span>
+
+        <button class="text-primary py-3 flex gap-6 items-center md:text-lg">
+          <i class="fa-solid fa-arrow-right-from-bracket text-secondary"></i>
+          Log out
+        </button>
+      </div>
+    </div>
+
+    <section class="bg-white my-40 inline-block justify-self-auto p-6">
+      <div class="flex gap-8 items-center">
+        <div class="images relative w-20 flex items-center">
+          <img
+            src="/images/profile.png"
+            alt=""
+            class="rounded-full h-10 w-10 object-cover absolute left-12 border-gray-300"
+          />
+          <img
+            src="/images/china.png"
+            alt=""
+            class="rounded-full h-10 w-10 object-cover absolute left-6 border-gray-300"
+          />
+          <img
+            src="/images/newyork2.png"
+            alt=""
+            class="rounded-full h-10 w-10 object-cover absolute border-gray-300"
+          />
+        </div>
+
+        <p class="text-sm">Kristian and 2 others liked the post</p>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeUnity | Post</title>
+
+    <script
+      src="https://kit.fontawesome.com/b515e79b0f.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/dist/tailwind.css" />
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon.png"
+    />
+
+    <script type="module" src="/src/js/pages/post/index.js"></script>
+  </head>
+
+  <body class="min-h-screen">
+    <!--Sidebar-->
+    <aside
+      class="hidden z-30 bg-primary w-full md:w-24 max-w-64 h-screen max-h-svh fixed lg:flex flex-col items-center justify-between gap-6"
+      id="sidebar"
+    >
+      <div class="h-4/5 flex flex-col">
+        <button class="mt-12 inline-block" id="sidebar-expand-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="white"
+            class="w-8 h-8"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5"
+            ></path>
+          </svg>
+        </button>
+        <div class="h-full flex flex-col">
+          <div
+            class="sidebar-image hidden flex-col items-center justify-center"
+            id="sidebarContainer"
+          ></div>
+          <nav
+            class="flex justify-between md:flex-col py-4 gap-5 2xl:gap-8 mt-10 2xl:mt-20 items-start 2xl:h-full max-h-96"
+          >
+            <a
+              href="/feed/index.html"
+              class="flex justify-center items-center home navLink gap-6"
+            >
+              <i class="fa-solid fa-house text-2xl w-8"></i>
+              <span class="hidden navOption">Home</span>
+            </a>
+
+            <a
+              href="/profile/index.html"
+              class="flex justify-center items-center profile navLink gap-6"
+              id="sidebarProfileLink"
+            >
+              <i class="fa-solid fa-user text-2xl w-8"></i>
+              <span class="hidden navOption">Profile</span>
+            </a>
+
+            <a
+              href=""
+              class="flex justify-center items-center groups navLink gap-6"
+            >
+              <i class="fa-solid fa-globe text-2xl w-8"></i>
+              <span class="hidden navOption">Explore</span>
+            </a>
+
+            <a href="" class="flex items-center settings navLink gap-6">
+              <i class="fa-solid fa-gear text-2xl w-8"></i>
+              <span class="hidden navOption">Settings</span>
+            </a>
+
+            <a href="" class="flex items-center inbox navLink gap-6">
+              <i class="fa-solid fa-envelope text-2xl w-8"></i>
+              <span class="hidden navOption">Inbox</span>
+            </a>
+          </nav>
+        </div>
+      </div>
+      <button class="text-white py-9 border-t w-full" id="logoutButton">
+        Log out
+      </button>
+    </aside>
+
+    <!-- mobile nav -->
+    <div
+      class="bg-primary w-full fixed bottom-0 h-16 sm:h-20 md:h-20 items-center flex lg:hidden z-10"
+    >
+      <nav class="flex mx-auto gap-8 sm:gap-20">
+        <a href="/feed/" class="home flex flex-col text-center">
+          <i class="fa-solid fa-house text-lg sm:text-xl md:text-2xl"></i>
+          <span class="text-xxs">HOME</span>
+        </a>
+
+        <a href="/profile/" class="profile flex flex-col text-center">
+          <i class="fa-solid fa-user text-lg sm:text-xl md:text-2xl"></i>
+          <span class="text-xxs">PROFILE</span>
+        </a>
+
+        <button class="addPost flex flex-col items-center cursor-pointer">
+          <i
+            class="fa-regular fa-square-plus text-lg sm:text-xl md:text-2xl"
+            id="create-post-mobile"
+          ></i>
+          <span class="text-xxs">NEW POST</span>
+        </button>
+
+        <a href="/feed/index.html" class="explore flex flex-col text-center">
+          <i class="fa-solid fa-globe text-lg sm:text-xl md:text-2xl"></i>
+          <span class="text-xxs">EXPLORE</span>
+        </a>
+
+        <button
+          class="home flex flex-col items-center cursor-pointer"
+          id="hamburgerMobile"
+        >
+          <i class="fa-solid fa-bars text-lg sm:text-xl md:text-2xl"></i>
+          <span class="text-xxs">MORE</span>
+        </button>
+      </nav>
+
+      <div
+        class="bg-white w-full md:w-1/2 md:right-0 fixed bottom-16 sm:bottom-20 md:bottom-20 hidden flex-col items-start py-3 px-5 border"
+        id="hamburgerOptions"
+      >
+        <div class="pb-3 pt-2 flex items-center justify-between w-full">
+          <p class="font-medium text-primary">MORE OPTIONS</p>
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </div>
+
+        <span class="border-b w-full"></span>
+
+        <button class="text-primary py-3 flex gap-6 items-center md:text-lg">
+          <i class="fa-solid fa-gear text-secondary"></i>
+          Settings
+        </button>
+        <span class="border-b w-full"></span>
+
+        <button class="text-primary py-3 flex gap-6 items-center md:text-lg">
+          <i class="fa-regular fa-envelope text-secondary"></i>
+          Inbox
+        </button>
+        <span class="border-b w-full"></span>
+
+        <button
+          class="text-primary py-3 flex gap-6 items-center md:text-lg logout-btn"
+        >
+          <i class="fa-solid fa-arrow-right-from-bracket text-secondary"></i>
+          Log out
+        </button>
+      </div>
+    </div>
+
+    <!--Header-->
+
+    <header
+      class="px-3 sm:px-8 lg:pl-36 py-4 lg:py-8 max-w-3xl lg:max-w-5xl 2xl:max-w-full mx-auto 2xl:pr-12 wrapper"
+    >
+      <div class="secondary-light flex justify-between items-center mx-auto">
+        <div class="logo flex items-end gap-x-2 sm:gap-x-5">
+          <strong class="text-2xl lg:text-3xl">CodeUnity</strong>
+          <span class="hidden md:flex md:text-xl">|</span>
+          <span
+            class="muted hidden md:flex lg:text-xl"
+            id="profileOwner"
+          >Post</span>
+        </div>
+
+        <div class="flex justify-between items-center xl:w-1/2 lg:gap-4">
+          <form
+            action="search"
+            class="bg-white p-1 md:p-2 rounded-full lg:rounded-md flex items-center justify-center w-12 h-12 md:w-14 md:h-14 lg:h-16 lg:min-w-72 xl:w-2/3 border relative mr-2 lg:mr-0"
+          >
+            <input
+              type="search"
+              placeholder="Search..."
+              class="hidden border-none outline-none flex-grow px-4 lg:w-full lg:flex"
+              id="search-input"
+              autocomplete="off"
+            />
+            <button class="px-4 py-2 rounded-md" id="search-button">
+              <i class="fa-solid fa-magnifying-glass lg:text-lg"></i>
+              <div
+                class="hidden absolute w-full bg-white z-30 left-0 top-14 py-2"
+                id="search-result-container"
+              >
+                <a
+                  class="border-t py-4 flex justify-between flex-wrap text-lg hover:bg-light duration-200 px-8"
+                >
+                  <div>title</div>
+                  <div>by <span>username</span></div>
+                </a>
+                <a
+                  class="border-t py-4 flex justify-between flex-wrap text-lg hover:bg-light duration-200 px-8"
+                >
+                  <div>title</div>
+                  <div>by <span>username</span></div>
+                </a>
+                <a
+                  class="border-t py-4 flex justify-between flex-wrap text-lg hover:bg-light duration-200 px-8"
+                >
+                  <div>title</div>
+                  <div>by <span>username</span></div>
+                </a>
+              </div>
+            </button>
+          </form>
+
+          <div class="flex items-center lg:gap-2">
+            <button
+              class="notifications flex items-center justify-center bg-white rounded-full w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 border mr-2 lg-mr-0"
+            >
+              <i class="fa-regular fa-bell text-lg lg:text-xl"></i>
+            </button>
+
+            <a
+              href="#"
+              class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16"
+              id="headerProfile"
+            ></a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-7xl lg:pl-24 mx-auto min-h-full pt-4 pb-20 xl:py-20">
+      <div
+        class="bg-white rounded-xl shadow-lg mb-8 px-4 sm:px-12 pt-5 lg:pt-9 pb-12 min-h-96 mx-4 sm:mx-10 md:mx-12 lg:mx-16"
+        id="post-container"
+      ></div>
+    </main>
+
+    <div
+      id="modal-container"
+      class="hidden mx-auto modal fixed z-50 items-center justify-center lg:left-[-3rem] top-0 h-full p-4 sm:p-10 overflow-auto md:ml-12 min-w-full"
+    >
+      <div
+        class="max-w-3xl flex flex-col px-4 sm:px-12 py-10 rounded-lg bg-white mx-auto border modal-content w-full"
+      >
+        <div class="flex justify-between items-center pb-2 md:pb-4">
+          <h2 class="text-2xl font-semibold" id="modal-header"></h2>
+          <i class="fa-solid fa-xmark text-xl cursor-pointer modal-close"></i>
+        </div>
+
+        <!--Modal body-->
+        <form class="modal-body"></form>
+      </div>
+    </div>
+
+    <footer class="bg-primary text-white pt-10 mt-12 md:mt-28">
+      <div
+        class="flex justify-between flex-col lg:flex-row max-w-3xl lg:max-w-5xl 2xl:max-w-full mx-auto wrapper py-6 md:py-4 mb-16 text-sm lg:mb-0 lg:pt-9 lg:pb-10 px-4 sm:px-10 md:px-12 lg:pl-36 2xl:pr-12"
+      >
+        <div>
+          <h2 class="text-xl md:text-2xl font-bold mb-3 sm:mb-8 lg:mb-0">
+            CodeUnity
+          </h2>
+        </div>
+
+        <div
+          class="flex flex-col sm:flex-row justify-between lg:w-3/4 xl:w-1/2"
+        >
+          <div class="lg:ml-8 my-3 sm:my-0">
+            <h3 class="md:text-lg font-medium">Support</h3>
+            <ul class="mt-2 space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white text-sm md:text-base"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white text-sm md:text-base"
+                  >Online support</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white text-sm md:text-base"
+                  >Contact us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white text-sm md:text-base"
+                  >Account settings</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white text-sm md:text-base"
+                  >Terms of use</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="lg:ml-8 my-3 sm:my-0">
+            <h3 class="md:text-lg font-medium">About</h3>
+            <ul class="mt-2 space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white text-sm md:text-base"
+                  >About us</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="lg:ml-8 my-3 sm:my-0">
+            <h3 class="md:text-lg font-medium">Privacy</h3>
+            <ul class="mt-2 space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white text-sm md:text-base"
+                  >Privacy Settings</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white text-sm md:text-base"
+                  >Guidelines</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t bg-light mt-10"></div>
+
+      <div
+        class="flex justify-between items-center max-w-3xl lg:max-w-5xl 2xl:max-w-full mx-auto wrapper py-6 md:py-4 mb-16 text-sm lg:mb-0 lg:pt-9 lg:pb-10 px-4 sm:px-10 md:px-12 lg:pl-36"
+      >
+        <p>Copyright CodeUnity © 2023</p>
+        <p>All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
