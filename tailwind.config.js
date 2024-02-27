@@ -13,9 +13,6 @@ module.exports = {
         orange: "#F5841A",
         background: "#F7F7F7",
       },
-      fontFamily: {
-        gilroy: ["Gilroy", "sans-serif"],
-      },
     },
   },
   plugins: [],
