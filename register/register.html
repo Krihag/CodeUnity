@@ -30,6 +30,8 @@
       src="https://kit.fontawesome.com/b515e79b0f.js"
       crossorigin="anonymous"
     ></script>
+
+    <script type="module" src="/src/js/pages/register/stepTwo/index.js"></script>
   </head>
   <body>
     <main class="flex mx-auto gap-32 min-h-screen">
@@ -84,6 +86,7 @@
                     src="/src/images/image.png"
                     alt=""
                     class="object-cover h-52 w-52 2xl:h-60 2xl:w-60 rounded-full"
+                    id="profileImagePreview"
                   />
                 </figure>
                 <label for="profileImage" class="2xl:text-lg text-gray-700"
@@ -94,6 +97,7 @@
                   id="profileImage"
                   name="profileImage"
                   class="py-1 px-3 rounded-sm border 2xl:text-lg mt-1.5"
+                  id="profileImageInput"
                 />
               </div>
 
@@ -103,6 +107,7 @@
                     src="/src/images/banner.png"
                     alt=""
                     class="object-cover rounded"
+                    id="bannerImagePreview"
                   />
                 </figure>
                 <label for="profileBanner" class="2xl:text-lg text-gray-700"
@@ -110,10 +115,10 @@
                 >
                 <input
                   type="url"
-                  id="profileBanner"
                   name="profileBanner"
                   required
                   class="py-1 px-3 rounded-sm border 2xl:text-lg mt-1.5"
+                  id="bannerImageInput"
                 />
               </div>
 
@@ -125,6 +130,7 @@
                   name="biography"
                   id="biography"
                   class="resize-none py-1 px-3 rounded-sm border 2xl:text-lg mt-1.5 h-44"
+                  id="registerBio"
                 ></textarea>
               </div>
 
