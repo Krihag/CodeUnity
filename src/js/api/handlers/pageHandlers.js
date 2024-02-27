@@ -37,14 +37,11 @@ export default {
 
     headerProfile.append(headerProfileImage);
 
-    document.addEventListener("DOMContentLoaded", async () => {
-      const posts = await getAllPosts();
-      searchbar(posts.data);
+    searchbar();
 
-      document
-        .querySelector("#create-post-mobile")
-        .addEventListener("click", createNewPost);
-    });
+    document
+      .querySelector("#create-post-mobile")
+      .addEventListener("click", createNewPost);
 
     mobileToggleNav();
 
