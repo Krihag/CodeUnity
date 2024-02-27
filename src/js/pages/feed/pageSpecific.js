@@ -38,15 +38,24 @@ export default async function pageSpecific() {
   console.log(profilesAll);
 }
 
-async function newPage(prevPage, oldProfiles) {
-  if (prevPage.isLastPage) return;
+async function newPage(prevPage, profiles) {
+  // async function nextPage(prevPage, oldProfiles) {
+  //   console.log(prevPage.nextPage);
+  //   const { data: profiles, meta: newPageData } = await getRequest.fetch(
+  //     endpoints.profiles.all(100, prevPage.nextPage)
+  //   );
 
-  console.log(prevPage.nextPage);
-  const { data: profiles, meta: newPageData } = await getRequest.fetch(
-    endpoints.profiles.all(100, prevPage.nextPage)
-  );
+  //   let updatedProfiles = [...oldProfiles, ...profiles];
+  //   return [updatedProfiles, newPageData];
+  // }
 
-  let updatedProfiles = [...oldProfiles, ...profiles];
+  while (!prevPage.isLastPage) {
+    const { data: newProfiles, meta: newPage } = await getRequest.fetch(
+      endpoints.profiles.all(100, prevPage.nextPage)
+    );
+    profiles = [...profiles, ...newProfiles];
+    prevPage = newPage;
+  }
 
-  await newPage(newPageData, updatedProfiles);
+  return profiles;
 }
