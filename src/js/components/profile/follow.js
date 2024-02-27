@@ -7,11 +7,11 @@ export default async function follow(profile, follow = false, isOwner = false) {
   const container = document.createElement("div");
   container.setAttribute(
     "class",
-    "hidden bg-white mt-10 rounded-md mx-auto pl-2 pr-6 sm:px-6 py-8 absolute top-10  shadow-md z-30 text-left follow-container cursor-default overflow-y-auto  max-w-96 sm:w-full sm:max-w-md "
+    "hidden bg-white mt-10 rounded-md mx-auto px-4 py-6 sm:px-6 sm:py-8 absolute top-10 shadow-md z-30 follow-container cursor-default overflow-y-auto max-w-80 sm:max-w-96 sm:w-full md:max-w-md"
   );
 
   const heading = document.createElement("h3");
-  heading.setAttribute("class", "text-xl font-medium");
+  heading.setAttribute("class", "text-lg sm:text-xl font-medium");
   const followText = follow ? "Following" : "Followers";
   heading.textContent = followText;
 
@@ -39,28 +39,28 @@ export default async function follow(profile, follow = false, isOwner = false) {
     const followerDiv = document.createElement("div");
     followerDiv.setAttribute(
       "class",
-      "flex justify-between py-6  items-center  " + border
+      "flex justify-between py-4 md:py-6 items-center" + border
     );
 
     const imageDiv = document.createElement("div");
-    imageDiv.setAttribute("class", "flex gap-3 sm:gap-5 lg:gap-10");
+    imageDiv.setAttribute("class", "flex gap-5 lg:gap-10");
 
     const image = document.createElement("img");
     image.setAttribute("src", follow.avatar.url);
     image.setAttribute("alt", follow.avatar.alt);
     image.setAttribute(
       "class",
-      "rounded-full h-12 w-12 lg:w-14 lg:h-14 object-cover"
+      "rounded-full h-10 w-10 sm:h-12 sm:w-12 lg:w-14 lg:h-14 object-cover"
     );
 
     const span = document.createElement("span");
 
     const nameHeading = document.createElement("h4");
-    nameHeading.setAttribute("class", "lg:text-lg");
+    nameHeading.setAttribute("class", "text-sm sm:text-base lg:text-lg font-medium");
     nameHeading.textContent = currentUser;
 
     const profileLinkHeading = document.createElement("a");
-    profileLinkHeading.setAttribute("class", "muted");
+    profileLinkHeading.setAttribute("class", "muted text-sm sm:text-base");
     profileLinkHeading.textContent = "View profile";
     profileLinkHeading.setAttribute("href", `/profile/?name=${follow.name}`);
 
@@ -83,7 +83,7 @@ export default async function follow(profile, follow = false, isOwner = false) {
       const button = document.createElement("button");
       button.setAttribute(
         "class",
-        "flex items-center p-2 md:px-6 rounded border border-primary hover:bg-light hover:border-light " +
+        "flex items-center p-2 md:px-6 rounded border border-primary hover:bg-light hover:border-light text-sm " +
           bgColor
       );
 
