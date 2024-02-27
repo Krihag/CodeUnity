@@ -1,10 +1,10 @@
 import storage from "../../utils/storage.js";
 import sidebarDetails from "../../components/sidebar/index.js";
-import searchbar from "../../utils/helpers/searchbar.js";
 import getAllPosts from "../../api/auth/requests/getAllPosts.js";
 import mobileToggleNav from "../../components/sidebar/mobileToggleNav.js";
 import expandSidebar from "../../utils/helpers/expandSidebar.js";
 import createNewPost from "../../components/modal/specificModals/createNewPost.js";
+import searchbar from "../../utils/helpers/searchbar.js";
 
 const headerProfile = document.querySelector("#headerProfile");
 const logoutBtns = document.querySelectorAll(".logout-btn");

@@ -1,9 +1,14 @@
-export default function searchbar(posts) {
+import requests from "../../api/auth/requests/index.js";
+import endpoints from "../../api/auth/data/endpoints/index.js";
+
+export default async function searchbar(posts) {
   const searchInput = document.getElementById("search-input");
   const searchContainer = document.getElementById("search-result-container");
 
+  const getRequest = await requests.get();
+
   // Event listener, search functionality
-  searchInput.addEventListener("input", (e) => {
+  searchInput.addEventListener("input", async (e) => {
     const searchValue = e.target.value.toLowerCase();
 
     searchContainer.innerHTML = "";
@@ -12,9 +17,13 @@ export default function searchbar(posts) {
       return;
     }
 
-    const filteredPosts = posts.filter((post) => {
-      return post.title.toLowerCase().includes(searchValue);
-    });
+    const { data: filteredPosts } = await getRequest.fetch(
+      endpoints.posts.search(searchValue)
+    );
+
+    // const filteredPosts = posts.filter((post) => {
+    //   return post.title.toLowerCase().includes(searchValue);
+    // });
     if (filteredPosts.length < 1) {
       searchContainer.classList.add("hidden");
     } else {
@@ -44,7 +53,7 @@ function result(post) {
   const usernameSpan = document.createElement("span");
   usernameSpan.setAttribute("class", "font-medium text-secondary");
   usernameSpan.textContent = post.author.name;
-  
+
   username.append(usernameSpan);
   container.append(titleDiv, username);
   return container;
