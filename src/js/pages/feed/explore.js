@@ -1,4 +1,5 @@
-var exploreContainer = document.getElementById("explore-container");
+export default function explore() {
+    var exploreContainer = document.getElementById("explore-container");
     var exploreOverlay = document.getElementById("explore-overlay");
 
     exploreContainer.addEventListener("mouseenter", showOverlay); 
@@ -13,3 +14,5 @@ var exploreContainer = document.getElementById("explore-container");
         exploreOverlay.classList.remove("opacity-100");
         exploreOverlay.classList.add("opacity-0");
     }
+}
+
