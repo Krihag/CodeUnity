@@ -39,15 +39,6 @@ export default async function pageSpecific() {
 }
 
 async function newPage(prevPage, profiles) {
-  // async function nextPage(prevPage, oldProfiles) {
-  //   console.log(prevPage.nextPage);
-  //   const { data: profiles, meta: newPageData } = await getRequest.fetch(
-  //     endpoints.profiles.all(100, prevPage.nextPage)
-  //   );
-
-  //   let updatedProfiles = [...oldProfiles, ...profiles];
-  //   return [updatedProfiles, newPageData];
-  // }
 
   while (!prevPage.isLastPage) {
     const { data: newProfiles, meta: newPage } = await getRequest.fetch(
