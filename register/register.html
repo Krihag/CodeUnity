@@ -28,6 +28,8 @@
       src="https://kit.fontawesome.com/b515e79b0f.js"
       crossorigin="anonymous"
     ></script>
+
+    <script src="/src/js/pages/register/index.js"></script>
   </head>
   <body>
 
@@ -66,28 +68,28 @@
 
           <div class="lg:overflow-auto scrollContainer mt-8 2xl:mt-10">
             <form id="registration-form" class="gap-8 xl:pr-10 2xl:pr-16">
-    
+
               <div class="flex flex-col">
                 <figure class="mb-8 xl:h-52 2xl:h-60">
-                    <img src="/src/images/image.png" alt="" class="object-cover h-52 w-52 2xl:h-60 2xl:w-60 rounded-full">
+                  <img src="/src/images/image.png" alt="" class="object-cover h-52 w-52 2xl:h-60 2xl:w-60 rounded-full" id="profileImagePreview">
                 </figure>
                 <label for="profileImage" class="2xl:text-lg text-gray-700">Select a profile image:</label>
-                <input type="url" id="profileImage" name="profileImage" class="py-1 px-3 rounded-sm border 2xl:text-lg mt-1.5">
+                <input type="url" id="profileImage" name="profileImage" class="py-1 px-3 rounded-sm border 2xl:text-lg mt-1.5" >
               </div>
-    
+
               <div class="flex flex-col mb-2 2xl:my-2">
                 <figure class="my-6">
-                    <img src="/src/images/banner.png" alt="" class="object-cover rounded">
+                  <img src="/src/images/banner.png" alt="" class="object-cover rounded" id="bannerImagePreview">
                 </figure>
                 <label for="profileBanner" class="2xl:text-lg text-gray-700">Select a banner:</label>
-                <input type="url" id="profileBanner" name="profileBanner" required class="py-1 px-3 rounded-sm border 2xl:text-lg mt-1.5" />
+                <input type="url" id="profileBanner" name="profileBanner" class="py-1 px-3 rounded-sm border 2xl:text-lg mt-1.5" >
               </div>
-    
+
               <div class="flex flex-col my-6">
                 <label for="biography" class="2xl:text-lg text-gray-700">Biography:</label>
-                <textarea name="biography" id="biography" class="resize-none py-1 px-3 rounded-sm border 2xl:text-lg mt-1.5 h-44"></textarea>
+                <textarea name="biography" id="biography" class="resize-none py-1 px-3 rounded-sm border 2xl:text-lg mt-1.5 h-44" id="registerBio"></textarea>
               </div>
-    
+
               <div class="flex justify-between mt-4 2xl:mt-10">
                 <a href="/profile/index.html" class="text-sm sm:text-base 2xl:text-lg flex gap-5  text-secondary items-center">Skip this step <i class="fa-solid fa-arrow-right"></i></a>
                 <button class="bg-secondary p-3 mt-2 w-32 text-white rounded-md text-center">Register</button>
