@@ -20,12 +20,16 @@ export default {
   // Login request
   login: async function (body) {
     const data = request(body, endpoints.login(), headers.basic());
-    loginSpecific(data);
+    const newData = await loginSpecific(data);
+    return newData;
   },
 
   register: async function (body, endpoint = endpoints.register()) {
+    console.log("registering: ");
+    console.log(body);
     const data = request(body, endpoint, headers.basic());
-    data.fetch();
+    const newData = await data.fetch();
+    return newData;
   },
 
   // Change profile media request (works with either banner or avatar)

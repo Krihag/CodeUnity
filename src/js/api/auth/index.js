@@ -34,12 +34,14 @@ export default class Auth {
     const url = config.BASE_URL + endpoint;
 
     this.body && (this.body = JSON.stringify(this.body));
+
     try {
       const response = await fetch(url, {
         headers: this.headers,
         method: this.method,
         body: this.body,
       });
+
       if (response.status === 204) {
         console.log("Request successful, no content. ");
         if (this.confirmMessage) confirmation(this.confirmMessage);

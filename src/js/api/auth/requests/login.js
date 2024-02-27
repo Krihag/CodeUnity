@@ -8,7 +8,7 @@ export default async function loginSpecific(loginRequest) {
     storage.save("token", accessToken);
     storage.save("profile", profileData);
     window.location.href = "/profile/?name=" + profileData.name;
-    return { accessToken, ...profileData };
+    return { response, accessToken, ...profileData };
   } catch (error) {
     console.error(error);
   }
