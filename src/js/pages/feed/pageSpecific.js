@@ -5,16 +5,15 @@ import requests from "../../api/auth/requests/index.js";
 import endpoints from "../../api/auth/data/endpoints/index.js";
 import filterPosts from "../../utils/helpers/filterPosts.js";
 import profileList from "../../utils/helpers/profileList.js";
+import createNewPost from "../../components/modal/specificModals/createNewPost.js";
 
 const postsContainer = document.getElementById("posts-container");
 const sortPosts = document.getElementById("sort-posts");
 const connectProfiles = document.getElementById("connect-profiles");
 
-const getRequest = await requests.get();
-
 export default async function pageSpecific() {
   pageHandlers.enterPage();
-
+  const getRequest = await requests.get();
   const user = storage.load("profile");
 
   const { data: posts } = await getRequest.fetch(endpoints.posts.all());
@@ -36,17 +35,22 @@ export default async function pageSpecific() {
   profileList(profilesAll, user, connectProfiles, 5);
 
   console.log(profilesAll);
-}
 
-async function newPage(prevPage, profiles) {
+  document
+    .getElementById("create-post-btn")
+    .addEventListener("click", createNewPost);
 
-  while (!prevPage.isLastPage) {
-    const { data: newProfiles, meta: newPage } = await getRequest.fetch(
-      endpoints.profiles.all(100, prevPage.nextPage)
-    );
-    profiles = [...profiles, ...newProfiles];
-    prevPage = newPage;
+  console.log("test");
+
+  async function newPage(prevPage, profiles) {
+    while (!prevPage.isLastPage) {
+      const { data: newProfiles, meta: newPage } = await getRequest.fetch(
+        endpoints.profiles.all(100, prevPage.nextPage)
+      );
+      profiles = [...profiles, ...newProfiles];
+      prevPage = newPage;
+    }
+
+    return profiles;
   }
-
-  return profiles;
 }
