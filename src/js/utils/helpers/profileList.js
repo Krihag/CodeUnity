@@ -10,7 +10,8 @@ export default function profileList(profiles, user, container, number = 5) {
         ) {
           if (
             profile.avatar.url !==
-            "https://images.unsplash.com/photo-1579547945413-497e1b99dac0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=80&h=400&w=400"
+              "https://images.unsplash.com/photo-1579547945413-497e1b99dac0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=80&h=400&w=400" &&
+            profile.avatar.url !== "https://via.placeholder.com/150"
           )
             numbersArray.push(randomNum);
         }
@@ -61,7 +62,7 @@ function singleProfile(profile) {
 
   anchorTag.href = `/profile/?name=${profile.name}`;
 
-  span.appendChild(h4,anchorTag);
+  span.appendChild(h4, anchorTag);
   innerDiv.append(img, span);
 
   const button = document.createElement("button");
