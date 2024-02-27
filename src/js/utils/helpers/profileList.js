@@ -62,7 +62,7 @@ function singleProfile(profile) {
 
   anchorTag.href = `/profile/?name=${profile.name}`;
 
-  span.appendChild(h4, anchorTag);
+  span.append(h4, anchorTag);
   innerDiv.append(img, span);
 
   const button = document.createElement("button");
