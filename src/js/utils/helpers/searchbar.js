@@ -1,7 +1,7 @@
 import requests from "../../api/auth/requests/index.js";
 import endpoints from "../../api/auth/data/endpoints/index.js";
 
-export default async function searchbar(posts) {
+export default async function searchbar() {
   const searchInput = document.getElementById("search-input");
   const searchContainer = document.getElementById("search-result-container");
 
