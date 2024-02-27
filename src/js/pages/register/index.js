@@ -1,8 +1,27 @@
 import listener from "../../api/handlers/eventListeners/formListen.js";
 import register from "./register.js";
-import seePassword from "./seePassword.js";
+import storage from "../../utils/storage.js";
 
-listener.register.auth();
+
 register();
-seePassword();
+
+const registerForm = document.querySelector("#registrationForm")
+
+registerForm.addEventListener("submit", function(e) {
+    e.preventDefault()
+
+    const body = {
+        password: document.querySelector("#password-input").value,
+        name: document.querySelector("#name").value,
+        email: document.querySelector("#email").value
+    }
+
+    storage.save("register", body)
+    window.location.href = "/register/register.html"
+
+
+    
+})
+
+
 
