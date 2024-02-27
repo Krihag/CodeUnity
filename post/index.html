@@ -2,28 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta description="">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta description="" />
+
     <title>CodeUnity | Post</title>
 
-    <link rel="stylesheet" href="../dist/tailwind.css">
-    <link rel="stylesheet" href="../src/css/customStyles.css">
+    <link rel="stylesheet" href="../dist/tailwind.css" />
+    <link rel="stylesheet" href="../src/css/customStyles.css" />
 
-    <script src="https://kit.fontawesome.com/b515e79b0f.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/b515e79b0f.js"
+      crossorigin="anonymous"
+    ></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="icon" type="image/png" sizes="16x16" href="../src/images/favicon.ico">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../src/images/favicon.ico"
+    />
 
     <script type="module" src="/src/js/pages/post/index.js"></script>
   </head>
 
   <body class="min-h-screen">
-
-  <!--Sidebar-->
+    <!--Sidebar-->
 
     <aside
       class="hidden z-30 bg-primary w-full md:w-24 max-w-64 h-screen max-h-svh fixed lg:flex flex-col items-center justify-between gap-6"
@@ -91,12 +101,15 @@
           </nav>
         </div>
       </div>
-      <button class="text-white py-9 border-t w-full" id="logoutButton">
+      <button
+        class="text-white py-9 border-t w-full logout-btn"
+        id="logoutButton"
+      >
         Log out
       </button>
     </aside>
 
-<!-- Mobile navigationbar -->
+    <!-- Mobile navigationbar -->
 
     <div
       class="bg-primary w-full fixed bottom-0 h-16 sm:h-20 md:h-20 items-center flex lg:hidden z-10"
@@ -166,7 +179,7 @@
       </div>
     </div>
 
-<!--Header-->
+    <!--Header-->
 
     <header
       class="px-3 sm:px-8 lg:pl-36 py-4 lg:py-8 max-w-3xl lg:max-w-5xl 2xl:max-w-full mx-auto 2xl:pr-12 wrapper"
@@ -175,10 +188,9 @@
         <div class="logo flex items-end gap-x-2 sm:gap-x-5">
           <strong class="text-2xl lg:text-3xl">CodeUnity</strong>
           <span class="hidden md:flex md:text-xl">|</span>
-          <span
-            class="muted hidden md:flex lg:text-xl"
-            id="profileOwner"
-          >Post</span>
+          <span class="muted hidden md:flex lg:text-xl" id="profileOwner"
+            >Post</span
+          >
         </div>
 
         <div class="flex justify-between items-center xl:w-1/2 lg:gap-4">
@@ -238,7 +250,7 @@
       </div>
     </header>
 
-<!-- Post container -->
+    <!-- Post container -->
 
     <main class="max-w-7xl lg:pl-24 mx-auto min-h-full pt-4 pb-20 xl:py-20">
       <div
@@ -247,7 +259,7 @@
       ></div>
     </main>
 
-<!-- Modal container -->
+    <!-- Modal container -->
 
     <div
       id="modal-container"
@@ -266,7 +278,7 @@
       </div>
     </div>
 
-<!-- Footer -->
+    <!-- Footer -->
 
     <footer class="bg-primary text-white pt-10 mt-12 md:mt-28">
       <div
