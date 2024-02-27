@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      description="Ready to join the coding community? Register now to connect with fellow enthusiasts, share ideas, and unlock endless possibilities. Dive into innovation and collaboration on our platform. Whether you're a beginner or expert, start your coding journey with us today."
+    />
+
+    <title>CodeUnity | Register</title>
+
+    <link rel="stylesheet" href="../dist/tailwind.css" />
+    <link rel="stylesheet" href="../src/css/customStyles.css" />
+
+    <script
+      src="https://kit.fontawesome.com/b515e79b0f.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../src/images/favicon.ico"
+    />
+
+    <script type="module" src="/src/js/pages/register/index.js"></script>
+  </head>
+  <body>
+    <main class="flex mx-auto gap-32 min-h-screen">
+      <section class="xl:flex justify-start w-full gap-10 xl:max-h-screen">
+        <!-- Side image -->
+        <div class="w-full lg:block xl:w-1/2">
+          <img
+            class="w-full xl:h-screen object-cover h-44 md:h-56 lg:h-72"
+            src="/src/images/register2.jpg"
+            alt=""
+          />
+        </div>
+
+        <!-- Steps -->
+
+        <div
+          class="py-10 lg:py-14 lg:max-h-full max-w-3xl xl:max-w-2xl 2xl:max-w-3xl px-10 2xl:ml-16 mx-auto xl:mx-0 xl:mb-12"
+        >
+          <div class="flex relative h-10 items-center">
+            <span
+              class="h-8 w-8 2xl:h-10 2xl:w-10 rounded-full bg-light flex items-center justify-center text-primary"
+              >1</span
+            >
+            <span
+              class="border-2 border-secondary w-8 place-self-center"
+            ></span>
+            <span
+              class="h-8 w-8 2xl:h-10 2xl:w-10 rounded-full bg-secondary flex items-center justify-center text-white"
+              >2</span
+            >
+          </div>
+
+          <!-- Register intro -->
+
+          <div class="pt-8 sm:pt-8 2xl:pt-16">
+            <h1 class="text-2xl 2xl:text-4xl font-bold">Sign up.</h1>
+            <p class="mt-4 mb-2 2xl:2xl:text-lg 2xl:my-6 leading-relaxed">
+              Welcome to CodeUnity, a vibrant community tailored for coders of
+              all skill levels. Whether you're a seasoned programmer or just
+              starting your coding journey, you've come to the right place.
+            </p>
+          </div>
+
+          <!-- Form section -->
+
+          <div class="lg:overflow-auto scrollContainer mt-8 2xl:mt-10">
+            <form
+              id="registrationForm"
+              class="w-full flex flex-col gap-5 xl:pr-10 2xl:pr-16"
+              method="post"
+            >
+              <div class="flex flex-col">
+                <label for="name" class="2xl:text-lg text-gray-700"
+                  >Name:</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="py-1 px-3 rounded-sm border 2xl:text-lg mt-1.5"
+                />
+              </div>
+              <div class="flex flex-col">
+                <label for="email" class="2xl:text-lg text-gray-700"
+                  >E-mail:</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="py-1 px-3 rounded-sm border 2xl:text-lg mt-1.5"
+                />
+                <span
+                  class="text-sm font-medium mt-3 text-secondary"
+                  id="validEmail"
+                  >Please enter a valid email-address</span
+                >
+              </div>
+              <div class="flex flex-col">
+                <label for="password" class="2xl:text-lg text-gray-700"
+                  >Password:</label
+                >
+                <input
+                  type="password"
+                  name="password"
+                  id="password-input"
+                  required
+                  class="py-1 px-3 rounded-sm border 2xl:text-lg mt-1.5 password"
+                />
+                <div class="password-strength"></div>
+              </div>
+              <div class="flex flex-col">
+                <label for="confirmPassword" class="2xl:text-lg text-gray-700"
+                  >Repeat Password:</label
+                >
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  class="py-1 px-3 rounded-sm border 2xl:text-lg mt-1.5 password"
+                  name="confirmPassword"
+                  required
+                  class="py-1 px-3 rounded-sm border 2xl:text-lg mt-1.5"
+                />
+              </div>
+
+              <div
+                class="flex-col mt-4"
+                id="passwordRequirements"
+                style="display: none"
+              >
+                <h3 class="mb-3 text-gray-600">Password must contain:</h3>
+                <div
+                  class="flex text-gray-600 gap-4 text-sm 2xl:text-base items-center"
+                >
+                  <span
+                    id="passwordLengthIcon"
+                    class="h-6 w-6 rounded-full bg-gray-500 flex items-center justify-center"
+                  >
+                    <i class="fa-solid fa-check text-white text-sm"></i>
+                  </span>
+                  Minimum 8 characters.
+                </div>
+
+                <div
+                  class="flex text-gray-600 gap-4 mt-1.5 text-sm 2xl:text-base items-center"
+                >
+                  <span
+                    id="passwordFormatIcon"
+                    class="h-6 w-6 rounded-full bg-gray-500 flex items-center justify-center"
+                  >
+                    <i class="fa-solid fa-check text-white text-sm"></i>
+                  </span>
+                  Lower- and uppercase letters, and numbers.
+                </div>
+
+                <div
+                  class="flex text-gray-600 gap-4 mt-1.5 text-sm 2xl:text-base items-center"
+                >
+                  <span
+                    id="passwordSymbol"
+                    class="h-6 w-6 rounded-full bg-gray-500 flex items-center justify-center"
+                  >
+                    <i class="fa-solid fa-check text-white text-sm"></i>
+                  </span>
+                  At least 1 special character.
+                </div>
+              </div>
+
+              <div class="hidden" id="incorrectPassword">
+                <p class="font-bold text-gray-700">
+                  The passwords do not match.
+                </p>
+              </div>
+
+              <button
+                type="submit"
+                class="bg-secondary py-2 mt-2 w-32 text-white rounded-md text-center"
+                >Next</button
+              >
+              <div class="2xl:text-lg flex gap-2 mt-10 text-gray-700">
+                Already have a user?<a
+                  href="/index.html"
+                  class="font-medium underline text-secondary"
+                  >Log in.</a
+                >
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--Footer-->
+
+    <footer class="bg-primary text-white pt-10 static bottom-0 w-full">
+      <div
+        class="flex justify-between flex-col lg:flex-row max-w-3xl lg:max-w-5xl 2xl:max-w-full mx-auto wrapper py-6 md:py-4 text-sm lg:pt-9 lg:pb-10 px-4 sm:px-10 md:px-12 xl:pl-36 2xl:pr-12"
+      >
+        <div>
+          <h2 class="text-xl md:text-2xl font-bold mb-3 sm:mb-8 lg:mb-0">
+            CodeUnity
+          </h2>
+        </div>
+
+        <div
+          class="flex flex-col sm:flex-row justify-between lg:w-3/4 xl:w-1/2"
+        >
+          <div class="lg:ml-8 my-3 sm:my-0">
+            <h3 class="md:text-lg font-medium">Support</h3>
+            <ul class="mt-2 space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white text-sm md:text-base"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white text-sm md:text-base"
+                  >Online support</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white text-sm md:text-base"
+                  >Contact us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white text-sm md:text-base"
+                  >Account settings</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white text-sm md:text-base"
+                  >Terms of use</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="lg:ml-8 my-3 sm:my-0">
+            <h3 class="md:text-lg font-medium">About</h3>
+            <ul class="mt-2 space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white text-sm md:text-base"
+                  >About us</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="lg:ml-8 my-3 sm:my-0">
+            <h3 class="md:text-lg font-medium">Privacy</h3>
+            <ul class="mt-2 space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white text-sm md:text-base"
+                  >Privacy Settings</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-white text-sm md:text-base"
+                  >Guidelines</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t bg-light mt-10"></div>
+
+      <div
+        class="flex flex-col md:flex-row justify-between md:items-center max-w-3xl lg:max-w-5xl 2xl:max-w-full mx-auto wrapper py-6 md:py-4 text-sm lg:pt-9 lg:pb-10 px-4 sm:px-10 md:px-12 xl:pl-36"
+      >
+        <p>Copyright CodeUnity © 2023</p>
+        <p>All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
