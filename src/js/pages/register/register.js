@@ -8,7 +8,8 @@ const passwordSymbol = document.querySelector("#passwordSymbol");
 const emailAddress = document.getElementById("email");
 const validEmail = document.getElementById("validEmail");
 
-validEmail.classList.add("hidden");
+export default function register(){
+  validEmail.classList.add("hidden");
 
 emailAddress.addEventListener("input", function () {
   const email = emailAddress.value;
@@ -67,3 +68,5 @@ confirmPasswordInput.addEventListener("blur", function () {
     }, 500);
   }
 });
+}
+
