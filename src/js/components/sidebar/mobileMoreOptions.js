@@ -6,7 +6,7 @@ export default function mobileMoreOptions() {
   const moreOptions = document.createElement("div");
   moreOptions.setAttribute(
     "class",
-    "pb-3 pt-2 flex items-center justify-between w-full "
+    "pb-3 pt-2 flex items-center justify-between w-full"
   );
 
   const moreHeadline = document.createElement("p");
