@@ -9,6 +9,7 @@ export default async function searchbar() {
 
   // Event listener, search functionality
   searchInput.addEventListener("input", async (e) => {
+    // e.preventDefualt();
     const searchValue = e.target.value.toLowerCase();
 
     searchContainer.innerHTML = "";
@@ -45,16 +46,21 @@ function result(post) {
   );
   container.href = `/post/?id=${post.id}`;
 
-  const titleDiv = document.createElement("div");
-  titleDiv.textContent = post.title;
+  const title = document.createElement("h2");
+  console.log(post.title);
+  title.textContent =
+    post.title.length > 20 ? post.title.slice(0, 20) + "..." : post.title;
+  title.classList.add("overflow-hidden");
 
-  const username = document.createElement("div");
+  const username = document.createElement("p");
+  username.classList.add("overflow-hidden");
   username.textContent = "by: ";
   const usernameSpan = document.createElement("span");
   usernameSpan.setAttribute("class", "font-medium text-secondary");
   usernameSpan.textContent = post.author.name;
 
   username.append(usernameSpan);
-  container.append(titleDiv, username);
+  container.append(title, username);
+
   return container;
 }
