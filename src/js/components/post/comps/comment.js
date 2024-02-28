@@ -73,7 +73,7 @@ export default function displayComments(comments, isOwner = false) {
       );
 
       const commentDate = document.createElement("p");
-      commentDate.setAttribute("class", "muted text-primary");
+      commentDate.setAttribute("class", "text-xs md:text-sm lg:text-base muted text-primary");
       commentDate.textContent = formatDate(comment.created);
 
       commentTextBox.append(commentText, commentDate);
