@@ -1,6 +1,6 @@
 import storage from "../../../utils/storage.js";
 
-export default function avatar(body, response, username) {
+export default function avatar(body) {
   const user = storage.load("profile");
   document.getElementById("sidebar-avatar").src = body.avatar.url;
   document.querySelector("#headerProfile img").src = body.avatar.url;
