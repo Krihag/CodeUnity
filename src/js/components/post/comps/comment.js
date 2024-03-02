@@ -1,12 +1,19 @@
 import formatDate from "../../../utils/helpers/formatDate.js";
 import storage from "../../../utils/storage.js";
+import requests from "../../../api/auth/requests/index.js";
 
-export default function displayComments(comments, isOwner = false) {
+export default function displayComments(post, isOwner = false) {
+  const comments = post.comments;
+
   const commentsContainer = document.createElement("div");
   commentsContainer.setAttribute("class", "displayComments");
 
   const user = storage.load("profile");
   if (comments && comments.length > 0) {
+    comments
+      .sort((a, b) => new Date(b.created) - new Date(a.created))
+      .reverse();
+
     comments.forEach((comment, index) => {
       const container = document.createElement("div");
       container.setAttribute(
@@ -58,7 +65,7 @@ export default function displayComments(comments, isOwner = false) {
         deleteComment.textContent = "Delete";
         deleteComment.setAttribute("class", "text-primary text-sm");
         deleteComment.addEventListener("click", async () => {
-          await request.deleteComment(comment.id);
+          await requests.deleteComment(post.id, comment.id);
           container.remove();
         });
         nameAndDelete.append(profileName, deleteComment);
@@ -73,7 +80,10 @@ export default function displayComments(comments, isOwner = false) {
       );
 
       const commentDate = document.createElement("p");
-      commentDate.setAttribute("class", "text-xs md:text-sm lg:text-base muted text-primary");
+      commentDate.setAttribute(
+        "class",
+        "text-xs md:text-sm lg:text-base muted text-primary"
+      );
       commentDate.textContent = formatDate(comment.created);
 
       commentTextBox.append(commentText, commentDate);

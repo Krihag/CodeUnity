@@ -56,6 +56,7 @@ export default class Auth {
           displayError(data.errors[0].message);
           throw new Error(data.errors[0].message);
         } else {
+          displayError("Unknown error occurred");
           throw new Error("Something went wrong: " + response);
         }
       }
