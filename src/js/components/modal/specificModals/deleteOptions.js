@@ -12,6 +12,7 @@ export default function deleteOptions(post, comment = false) {
   if (comment) {
     ele1.text = "Are you sure you want to delete comment?";
     ele2.optionTwo.request = request.deleteComment;
+    ele2.commentId = comment.id;
   }
 
   const data = { elements: [ele1, ele2] };

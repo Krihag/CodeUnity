@@ -1,6 +1,7 @@
 import formatDate from "../../../utils/helpers/formatDate.js";
 import storage from "../../../utils/storage.js";
 import requests from "../../../api/auth/requests/index.js";
+import deleteOptions from "../../modal/specificModals/deleteOptions.js";
 
 export default function displayComments(post, isOwner = false) {
   const comments = post.comments;
@@ -60,13 +61,16 @@ export default function displayComments(post, isOwner = false) {
       const usersComment = comment.author.name === user.name;
       console.log(usersComment);
 
-      if (isOwner || usersComment) {
-        const deleteComment = document.createElement("button");
-        deleteComment.textContent = "Delete";
-        deleteComment.setAttribute("class", "text-primary text-sm");
+      if (usersComment) {
+        const deleteComment = document.createElement("a");
+
+        deleteComment.setAttribute(
+          "class",
+          "fa-solid fa-trash cursor-pointer text-gray-600 p-3"
+        );
         deleteComment.addEventListener("click", async () => {
-          await requests.deleteComment(post.id, comment.id);
-          container.remove();
+          // await requests.deleteComment(post.id, comment.id);
+          deleteOptions(post, comment);
         });
         nameAndDelete.append(profileName, deleteComment);
         commentTextBox.append(nameAndDelete);

@@ -144,6 +144,7 @@ export default {
     const response = await data.fetch();
 
     if (response == "deleted") {
+      updateComments(postId);
     }
   },
 
@@ -156,6 +157,5 @@ export default {
       "put"
     );
     const response = await data.fetch();
-    console.log(response);
   },
 };

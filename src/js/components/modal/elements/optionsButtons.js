@@ -7,13 +7,15 @@ export default function optionsButton(ele) {
   const optionTwo = ele.optionTwo ? ele.optionTwo.text : "Save";
 
   const buttonsContainer = document.createElement("div");
-  buttonsContainer.setAttribute("class",
+  buttonsContainer.setAttribute(
+    "class",
     "flex gap-4 mt-2 md:mt-6 justify-start md:justify-end"
   );
 
   const firstButton = document.createElement("button");
   firstButton.type = "button";
-  firstButton.setAttribute("class",
+  firstButton.setAttribute(
+    "class",
     "rounded border flex items-center justify-center px-6 py-3 md:px-10 md:py-4 hover:bg-light duration-500 modal-close"
   );
 
@@ -21,7 +23,8 @@ export default function optionsButton(ele) {
 
   const secondButton = document.createElement("button");
   secondButton.type = "submit";
-  secondButton.setAttribute("class",
+  secondButton.setAttribute(
+    "class",
     "rounded bg-secondary flex items-center justify-center px-10 py-4 text-white hover:bg-light duration-500 hover:text-primary"
   );
   secondButton.textContent = optionTwo;
@@ -33,7 +36,8 @@ export default function optionsButton(ele) {
       e.preventDefault();
       modal.close();
       try {
-        await ele.optionTwo.request(ele.id);
+        if (ele.commentId) await ele.optionTwo.request(ele.id, ele.commentId);
+        else await ele.optionTwo.request(ele.id);
       } catch (error) {
         console.error(error);
       }
