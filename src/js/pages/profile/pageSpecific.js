@@ -42,9 +42,12 @@ export default async function pageSpecific() {
   console.log(profile);
   console.log(profilePosts);
   const { data: allPosts } = await getRequest.fetch(endpoints.posts.all());
-  profilePosts.forEach((post) => postTemp(post, postContainer));
-
-  console.log(allPosts);
+  if (profilePosts.length > 0) {
+    profilePosts.forEach((post) => postTemp(post, postContainer));
+  } else {
+    postContainer.textContent = "No posts by user.";
+    postContainer.classList.add("text-center", "text-2xl");
+  }
 
   const isOwner = name === user.name ? true : false;
 
