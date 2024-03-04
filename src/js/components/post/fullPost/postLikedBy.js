@@ -59,7 +59,6 @@ export default async function postLikedBy(post, mainContainer) {
           imgLeft
       );
 
-      // userImg.classList.add(`left-${imgLeft}`);
       imgLeft += 6;
 
       imgLink.href = `/profile/?name=${personLiked.name}`;

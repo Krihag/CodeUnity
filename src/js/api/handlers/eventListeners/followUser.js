@@ -20,14 +20,10 @@ export default function followUser(element, name, isOwner = false) {
 
       if (isOwner) {
         const followers = document.getElementById("following-count");
+
         buttonText === "Follow"
           ? followers.textContent++
           : followers.textContent--;
-      } else {
-        const following = document.getElementById("followers-count");
-        buttonText === "Follow"
-          ? following.textContent++
-          : following.textContent--;
       }
     }
   }
