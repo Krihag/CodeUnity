@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="../dist/tailwind.css" />
     <link rel="stylesheet" href="../src/css/customStyles.css" />
+    <link rel="stylesheet" href="../src/css/loadingIndicator.css">
 
     <script
       src="https://kit.fontawesome.com/b515e79b0f.js"
@@ -301,7 +302,14 @@
             New post
           </button>
         </div>
-        <div class="mt-10" id="posts-container"></div>
+
+        
+
+        <div class="mt-10" id="posts-container">
+          <div class="loading-indicator">
+            <span class="loader"></span>
+          </div>
+        </div>
       </main>
 
       <!-- Discover-->
@@ -339,7 +347,11 @@
 
         <section class="bg-white mt-6 2xl:mt-10 customBorder py-6 2xl:py-8">
           <h3 class="text-xl font-medium px-10 pb-3">Connect with others</h3>
-          <div id="connect-profiles"></div>
+          <div id="connect-profiles">
+            <div class="loading-indicator mt-4 mb-16">
+              <span class="loader"></span>
+            </div>
+          </div>
           <button
             class="bg-light py-5 rounded mt-5 w-5/6 flex items-center justify-center ml-10"
             disabled>
