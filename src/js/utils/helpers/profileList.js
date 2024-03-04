@@ -1,10 +1,12 @@
+import followUser from "../../api/handlers/eventListeners/followUser.js";
+
 export default function profileList(profiles, user, container, number = 5) {
   let numbersArray = [];
   while (numbersArray.length < number) {
     let randomNum = Math.floor(Math.random() * profiles.length);
     let profile = profiles[randomNum];
     if (!numbersArray.includes(randomNum)) {
-      if (user.name !== profile.name) {
+      if (user.name !== profile.name && profile.name.length < 13) {
         if (
           !profile.followers.some((follower) => follower.name === user.name)
         ) {
@@ -71,6 +73,7 @@ function singleProfile(profile) {
     "flex items-center gap-3 p-2 px-5 2xl:px-6 rounded border border-primary hover:bg-light hover:border-light text-sm 2xl:text-base"
   );
   button.textContent = "Follow";
+  followUser(button, profile.name);
 
   profileContainer.appendChild(innerDiv);
   profileContainer.appendChild(button);
