@@ -26,8 +26,8 @@ export default async function pageSpecific() {
     filterPosts(posts, sortPosts, postsContainer);
   } else {
     postsContainer.innerHTML = `<div>
-    <h2>No posts to display from your followers</h2>
-    <div>Find posts at: <a href="/explore/">Explore posts</a></div>
+    <h2>No posts available from people in your network</h2>
+    <div>Visit explore posts to see all posts and find more people to follow <a href="/explore/">Explore posts</a></div>
     </a>`;
   }
 
