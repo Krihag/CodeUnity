@@ -27,7 +27,7 @@ export default async function pageSpecific() {
   } else {
     postsContainer.innerHTML = `<div>
     <h2>No posts to display from your followers</h2>
-    <div>Check out: <a href="/explore/">Explore posts</a></div>
+    <div>Find posts at: <a href="/explore/">Explore posts</a></div>
     </a>`;
   }
 
