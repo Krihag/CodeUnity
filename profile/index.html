@@ -88,7 +88,10 @@
               <span class="hidden navOption">Explore</span>
             </a>
 
-            <button class="flex items-center settings navLink gap-6 w-8" disabled>
+            <button
+              class="flex items-center settings navLink gap-6 w-8"
+              disabled
+            >
               <i class="fa-solid fa-gear text-2xl"></i>
               <span class="hidden navOption">Settings</span>
             </button>
@@ -149,35 +152,35 @@
       </nav>
 
       <div
-      class="bg-white w-full md:w-1/2 md:right-0 fixed bottom-16 sm:bottom-20 md:bottom-20 hidden flex-col items-start py-3 px-5 border"
-      id="hamburgerOptions"
-    >
-      <div class="pb-3 pt-2 flex items-center justify-between w-full">
-        <p class="font-medium text-primary">MORE OPTIONS</p>
-        <i class="fa-solid fa-xmark text-lg" id="moreOptionsClose"></i>
-      </div>
-
-      <span class="border-b w-full"></span>
-
-      <button class="text-primary py-3 flex gap-6 items-center md:text-lg">
-        <i class="fa-solid fa-gear text-secondary"></i>
-        Settings
-      </button>
-      <span class="border-b w-full"></span>
-
-      <button class="text-primary py-3 flex gap-6 items-center md:text-lg">
-        <i class="fa-regular fa-envelope text-secondary"></i>
-        Inbox
-      </button>
-      <span class="border-b w-full"></span>
-
-      <button
-        class="text-primary py-3 flex gap-6 items-center md:text-lg logout-btn"
+        class="bg-white w-full md:w-1/2 md:right-0 fixed bottom-16 sm:bottom-20 md:bottom-20 hidden flex-col items-start py-3 px-5 border"
+        id="hamburgerOptions"
       >
-        <i class="fa-solid fa-arrow-right-from-bracket text-secondary"></i>
-        Log out
-      </button>
-    </div>
+        <div class="pb-3 pt-2 flex items-center justify-between w-full">
+          <p class="font-medium text-primary">MORE OPTIONS</p>
+          <i class="fa-solid fa-xmark text-lg" id="moreOptionsClose"></i>
+        </div>
+
+        <span class="border-b w-full"></span>
+
+        <button class="text-primary py-3 flex gap-6 items-center md:text-lg">
+          <i class="fa-solid fa-gear text-secondary"></i>
+          Settings
+        </button>
+        <span class="border-b w-full"></span>
+
+        <button class="text-primary py-3 flex gap-6 items-center md:text-lg">
+          <i class="fa-regular fa-envelope text-secondary"></i>
+          Inbox
+        </button>
+        <span class="border-b w-full"></span>
+
+        <button
+          class="text-primary py-3 flex gap-6 items-center md:text-lg logout-btn"
+        >
+          <i class="fa-solid fa-arrow-right-from-bracket text-secondary"></i>
+          Log out
+        </button>
+      </div>
     </div>
 
     <!--Header-->
@@ -187,7 +190,10 @@
     >
       <div class="secondary-light flex justify-between items-center mx-auto">
         <div class="logo flex items-end gap-x-2 sm:gap-x-5">
-          <a href="/feed/index.html" class="text-xl md:text-2xl lg:text-3xl font-bold mb-3 sm:mb-8 lg:mb-0">
+          <a
+            href="/feed/index.html"
+            class="text-xl md:text-2xl lg:text-3xl font-bold mb-3 sm:mb-8 lg:mb-0"
+          >
             CodeUnity
           </a>
           <span class="hidden md:flex md:text-xl">|</span>
@@ -199,7 +205,8 @@
 
         <div class="flex justify-between items-center xl:w-1/2 lg:gap-4">
           <div
-            class="bg-white p-1 md:p-2 rounded-full lg:rounded-md flex items-center justify-center w-12 h-12 md:w-14 md:h-14 lg:h-16 lg:min-w-72 xl:w-2/3 border relative mr-2 lg:mr-0"
+            id="search-container"
+            class="bg-white p-1 md:p-2 rounded-full lg:rounded-md flex items-center justify-center w-12 h-12 md:w-full md:h-14 lg:h-16 lg:min-w-72 xl:w-2/3 border relative mr-2 lg:mr-0 md:static"
           >
             <input
               type="search"
@@ -210,36 +217,18 @@
             />
             <div class="px-4 py-2 rounded-md" id="search-button" type="button">
               <i class="fa-solid fa-magnifying-glass lg:text-lg"></i>
-              <div
-                class="hidden absolute w-full bg-white z-30 left-0 top-14 py-2"
-                id="search-result-container"
-              >
-                <a
-                  class="border-t py-4 flex justify-between flex-wrap text-lg hover:bg-light duration-200 px-8"
-                >
-                  <div>title</div>
-                  <div>by <span>username</span></div>
-                </a>
-                <a
-                  class="border-t py-4 flex justify-between flex-wrap text-lg hover:bg-light duration-200 px-8"
-                >
-                  <div>title</div>
-                  <div>by <span>username</span></div>
-                </a>
-                <a
-                  class="border-t py-4 flex justify-between flex-wrap text-lg hover:bg-light duration-200 px-8"
-                >
-                  <div>title</div>
-                  <div>by <span>username</span></div>
-                </a>
-              </div>
             </div>
+            <div
+              class="hidden absolute w-full bg-white z-30 left-0 top-14 py-2"
+              id="search-result-container"
+            ></div>
           </div>
 
           <div class="flex items-center lg:gap-2">
             <button
               class="notifications flex items-center justify-center bg-white rounded-full w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 border mr-2 lg-mr-0"
-            disabled>
+              disabled
+            >
               <i class="fa-regular fa-bell text-lg lg:text-xl"></i>
             </button>
 
@@ -298,7 +287,10 @@
         class="flex justify-between flex-col lg:flex-row max-w-3xl lg:max-w-5xl 2xl:max-w-full mx-auto wrapper py-6 md:py-4 mb-16 text-sm lg:mb-0 lg:pt-9 lg:pb-10 px-4 sm:px-10 md:px-12 lg:pl-36 2xl:pr-12"
       >
         <div>
-          <a href="/feed/" class="text-xl md:text-2xl font-bold mb-3 sm:mb-8 lg:mb-0">
+          <a
+            href="/feed/"
+            class="text-xl md:text-2xl font-bold mb-3 sm:mb-8 lg:mb-0"
+          >
             CodeUnity
           </a>
         </div>
@@ -313,36 +305,41 @@
                 <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >FAQ</p
                 >
+                  FAQ
+                </p>
               </li>
               <li>
                 <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >Online support</p
                 >
+                  Online support
+                </p>
               </li>
               <li>
                 <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >Contact us</p
                 >
+                  Contact us
+                </p>
               </li>
               <li>
                 <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >Account settings</p
                 >
+                  Account settings
+                </p>
               </li>
               <li>
                 <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >Terms of use</p
                 >
+                  Terms of use
+                </p>
               </li>
             </ul>
           </div>
@@ -354,8 +351,9 @@
                 <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >About us</p
                 >
+                  About us
+                </p>
               </li>
             </ul>
           </div>
@@ -367,15 +365,17 @@
                 <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >Privacy Settings</p
                 >
+                  Privacy Settings
+                </p>
               </li>
               <li>
                 <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >Guidelines</p
                 >
+                  Guidelines
+                </p>
               </li>
             </ul>
           </div>

@@ -45,8 +45,7 @@ export default async function pageSpecific() {
   if (profilePosts.length > 0) {
     profilePosts.forEach((post) => postTemp(post, postContainer));
   } else {
-    postContainer.textContent = "No posts by user.";
-    postContainer.classList.add("text-center", "text-2xl");
+    postContainer.innerHTML = `<div class="text-center text-2xl">No posts by user yet</div>`;
   }
 
   const isOwner = name === user.name ? true : false;
