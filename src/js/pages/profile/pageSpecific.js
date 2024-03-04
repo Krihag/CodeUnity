@@ -4,6 +4,7 @@ import profileComponents from "../../components/profile/index.js";
 import postTemp from "../../components/post/thumbnail/index.js";
 import endpoints from "../../api/auth/data/endpoints/index.js";
 import requests from "../../api/auth/requests/index.js";
+import metaProfile from "../../components/profile/metaProfile.js";
 
 const postContainer = document.getElementById("posts-container");
 const profileOwner = document.querySelector("#profileOwner");
@@ -54,5 +55,6 @@ export default async function pageSpecific() {
 
   profileOwner.textContent = isOwner ? "Your Profile" : "@" + name;
 
+  metaProfile(name);
   return data;
 }
