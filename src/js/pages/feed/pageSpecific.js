@@ -26,9 +26,14 @@ export default async function pageSpecific() {
     filterPosts(posts, sortPosts, postsContainer);
   } else {
     postsContainer.innerHTML = `<div>
-    <h2>No posts available from people in your network</h2>
-    <div>Visit explore posts to see all posts and find more people to follow <a href="/explore/">Explore posts</a></div>
-    </a>`;
+    <h2 class="font-medium lg:text-lg xl:text-xl text-secondary mt-16">Woops... Nothing to see here!</h2>
+    <div class="mt-4">
+    <p class="text-sm md:text-base xl:text-lg">It seems like this area is a bit empty at the moment, but don't worry - there is plenty to explore!</p>
+    <p class="text-sm md:text-base xl:text-lg">Expand your network by following people you might know or someone who inspires you.</p>
+    <p class="my-3 text-sm md:text-base xl:text-lg">Ready to dive in? Click below to start exploring!</p>
+
+    <a class="text-sm md:text-base bg-light p-3 lg:px-8 lg:py-4 rounded flex items-center justify-center max-w-44 mt-8" href="/explore/">Explore posts</a>
+    </div>`;
   }
 
   const { data: profiles, meta: profilePage } = await getRequest.fetch(
