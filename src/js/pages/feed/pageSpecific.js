@@ -16,14 +16,20 @@ export default async function pageSpecific() {
   const getRequest = await requests.get();
   const user = storage.load("profile");
 
-  const { data: posts } = await getRequest.fetch(endpoints.posts.all());
+  const { data: posts } = await getRequest.fetch(endpoints.posts.byFollowing());
 
-  posts.forEach((post) => {
-    postThumbnail(post, postsContainer);
-  });
-  console.log(sortPosts);
+  if (posts.length > 0) {
+    posts.forEach((post) => {
+      postThumbnail(post, postsContainer);
+    });
 
-  filterPosts(posts, sortPosts, postsContainer);
+    filterPosts(posts, sortPosts, postsContainer);
+  } else {
+    postsContainer.innerHTML = `<div>
+    <h2>No posts to display from your followers</h2>
+    <div>Check out: <a href="/explore/">Explore posts</a></div>
+    </a>`;
+  }
 
   const { data: profiles, meta: profilePage } = await getRequest.fetch(
     endpoints.profiles.all(100)
