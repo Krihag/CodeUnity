@@ -3,7 +3,8 @@ const postFilter = "_author=true&_reactions=true&_comments=true";
 // Contains all endpoints for post requests
 export default {
   // - all posts
-  all: () => `/social/posts?${postFilter}`,
+  all: (limit = 100, page = 1) =>
+    `/social/posts?${postFilter}&limit=${limit}&page=${page}`,
 
   // - all posts by a specific tag (default tag is "CodeUnity")
   byTag: (tag = "CodeUnity") => `/social/posts?tag=${tag}&${postFilter}`,
