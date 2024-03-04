@@ -47,6 +47,7 @@ export default function profileOptions(profile, isOwner, user) {
       "flex items-center gap-3 py-4 px-6 rounded border border-primary hover:bg-light hover:border-light"
     );
     messageButton.textContent = "Message";
+    messageButton.disabled = true;
 
     container.append(followButton, messageButton);
 
