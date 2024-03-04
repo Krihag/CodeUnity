@@ -2,6 +2,9 @@
 module.exports = {
   purge: {
     content: ["./**/*.html", "./src/**/*.js"],
+    options: {
+      safelist: ["left-12", "left-6"],
+    },
   },
   theme: {
     extend: {
