@@ -111,7 +111,7 @@
     <!-- Mobile navigationbar -->
 
     <div
-      class="bg-primary w-full fixed bottom-0 h-16 sm:h-20 md:h-20 items-center flex lg:hidden"
+      class="bg-primary w-full fixed bottom-0 h-16 sm:h-20 md:h-20 items-center flex lg:hidden z-30"
     >
       <nav class="flex mx-auto gap-8 sm:gap-20">
         <a href="/feed/" class="home flex flex-col text-center">
@@ -149,35 +149,35 @@
       </nav>
 
       <div
-        class="bg-white w-full md:w-1/2 md:right-0 fixed bottom-16 sm:bottom-20 md:bottom-20 hidden flex-col items-start py-3 px-5 border"
-        id="hamburgerOptions"
-      >
-        <div class="pb-3 pt-2 flex items-center justify-between w-full">
-          <p class="font-medium text-primary">MORE OPTIONS</p>
-          <i class="fa-solid fa-xmark text-lg" id="moreOptionsClose"></i>
-        </div>
-
-        <span class="border-b w-full"></span>
-
-        <button class="text-primary py-3 flex gap-6 items-center md:text-lg">
-          <i class="fa-solid fa-gear text-secondary"></i>
-          Settings
-        </button>
-        <span class="border-b w-full"></span>
-
-        <button class="text-primary py-3 flex gap-6 items-center md:text-lg">
-          <i class="fa-regular fa-envelope text-secondary"></i>
-          Inbox
-        </button>
-        <span class="border-b w-full"></span>
-
-        <button
-          class="text-primary py-3 flex gap-6 items-center md:text-lg logout-btn"
-        >
-          <i class="fa-solid fa-arrow-right-from-bracket text-secondary"></i>
-          Log out
-        </button>
+      class="bg-white w-full md:w-1/2 md:right-0 fixed bottom-16 sm:bottom-20 md:bottom-20 hidden flex-col items-start py-3 px-5 border"
+      id="hamburgerOptions"
+    >
+      <div class="pb-3 pt-2 flex items-center justify-between w-full">
+        <p class="font-medium text-primary">MORE OPTIONS</p>
+        <i class="fa-solid fa-xmark text-lg" id="moreOptionsClose"></i>
       </div>
+
+      <span class="border-b w-full"></span>
+
+      <button class="text-primary py-3 flex gap-6 items-center md:text-lg">
+        <i class="fa-solid fa-gear text-secondary"></i>
+        Settings
+      </button>
+      <span class="border-b w-full"></span>
+
+      <button class="text-primary py-3 flex gap-6 items-center md:text-lg">
+        <i class="fa-regular fa-envelope text-secondary"></i>
+        Inbox
+      </button>
+      <span class="border-b w-full"></span>
+
+      <button
+        class="text-primary py-3 flex gap-6 items-center md:text-lg logout-btn"
+      >
+        <i class="fa-solid fa-arrow-right-from-bracket text-secondary"></i>
+        Log out
+      </button>
+    </div>
     </div>
 
     <!--Header-->
