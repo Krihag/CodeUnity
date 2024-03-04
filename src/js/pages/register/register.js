@@ -1,4 +1,4 @@
-const passwordInput = document.querySelector("#password-input");
+const passwordInput = document.querySelector("#password");
 const confirmPasswordInput = document.querySelector("#confirmPassword");
 const passwordRequirements = document.querySelector("#passwordRequirements");
 const passwordLength = document.querySelector("#passwordLengthIcon");

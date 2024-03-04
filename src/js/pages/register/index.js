@@ -1,6 +1,7 @@
 import listener from "../../api/handlers/eventListeners/formListen.js";
 import register from "./register.js";
 import storage from "../../utils/storage.js";
+import seePassword from "./seePassword.js";
 
 
 register();
@@ -18,10 +19,8 @@ registerForm.addEventListener("submit", function(e) {
 
     storage.save("register", body)
     window.location.href = "/register/register.html"
-
-
-    
 })
 
+seePassword();
 
 
