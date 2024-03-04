@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="../dist/tailwind.css" />
     <link rel="stylesheet" href="../src/css/customStyles.css" />
+    <link rel="stylesheet" href="../src/css/loadingIndicator.css">
 
     <script
       src="https://kit.fontawesome.com/b515e79b0f.js"
@@ -254,10 +255,12 @@
     <!-- Post container -->
 
     <main class="max-w-7xl lg:pl-24 mx-auto min-h-full pt-4 pb-20 xl:py-20">
+      <div class="loading-indicator">
+        <span class="loader"></span>
+      </div>
       <div
-        class="bg-white rounded-xl shadow-lg mb-8 px-4 sm:px-12 pt-5 lg:pt-9 pb-12 min-h-96 mx-4 sm:mx-10 md:mx-12 lg:mx-16"
-        id="post-container"
-      ></div>
+        id="post-container">
+      </div>
     </main>
 
     <!-- Modal container -->
