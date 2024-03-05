@@ -29,6 +29,9 @@ We have worked together every single day on Discord, collaborating through strea
 
 ### Planning the project
 To plan the project, we made a Trello-board with checklists and color themes based on how timeconsuming the different tasks would be. By making the Trello-board it was also easier to work structured and keep it organized all the way through the project.
+This is the link to our Trello-board:
+
+https://trello.com/invite/b/re3pcLV0/ATTI938bce8f0821325687e6a6aa3a479a3409D4FA72/javascript-2
 
 ## BUILT WITH
 ![HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
