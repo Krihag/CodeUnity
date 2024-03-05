@@ -33,6 +33,7 @@
     />
 
     <script type="module" src="/src/js/pages/explore/index.js"></script>
+    <script defer src="backToTop.js"></script>
   </head>
 
   <body>
@@ -191,7 +192,7 @@
     >
       <div class="secondary-light flex justify-between items-center mx-auto">
         <div class="logo flex items-end gap-x-2 sm:gap-x-5">
-          <a href="/feed/index.html" class="text-xl md:text-2xl lg:text-3xl font-bold">
+          <a href="/feed/index.html" class="text-xl md:text-2xl lg:text-3xl font-bold outline-none" id="logo">
             CodeUnity
           </a>
           <span class="hidden md:flex md:text-xl">|</span>
@@ -441,6 +442,13 @@
             Discover more tags
           </button>
         </section>
+
+        <a href="#logo" id="backButton" class="fixed bottom-24 right-1/4 flex items-center gap-5" style="display: none;">
+          <span class="rounded-full w-12 h-12 bg-light flex items-center justify-center">
+            <i class="fa-solid fa-chevron-up"></i>
+          </span>
+          <span>Back to top</span>
+        </a>
       </aside>
     </div>
 
