@@ -7,11 +7,11 @@ window.addEventListener('scroll', function() {
     } else if (window.innerWidth >= 1280) { 
       breakpoint = 1500;
     } else if (window.innerWidth >= 768) { 
-      breakpoint = 2000;
+      breakpoint = 1000;
     } else if (window.innerWidth >= 640) { 
-      breakpoint = 2500;
+      breakpoint = 1500;
     } else { 
-      breakpoint = 3000;
+      breakpoint = 1000;
     }
   
     if (window.scrollY > breakpoint) {
