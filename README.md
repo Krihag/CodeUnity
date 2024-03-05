@@ -33,6 +33,8 @@ This is the link to our Trello-board:
 
 https://trello.com/invite/b/re3pcLV0/ATTI938bce8f0821325687e6a6aa3a479a3409D4FA72/javascript-2
 
+![Skjermbilde 2024-03-05 225942](https://github.com/Krihag/CodeUnity/assets/125905644/55a642e2-8bcd-4fce-96d4-afda28419250)
+
 ## BUILT WITH
 ![HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
