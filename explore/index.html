@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="../dist/tailwind.css" />
     <link rel="stylesheet" href="../src/css/customStyles.css" />
-    <link rel="stylesheet" href="../src/css/loadingIndicator.css">
+    <link rel="stylesheet" href="../src/css/loadingIndicator.css" />
 
     <script
       src="https://kit.fontawesome.com/b515e79b0f.js"
@@ -93,7 +93,10 @@
               <span class="hidden navOption">Explore</span>
             </a>
 
-            <button class="flex items-center settings navLink gap-6 w-8" disabled>
+            <button
+              class="flex items-center settings navLink gap-6 w-8"
+              disabled
+            >
               <i class="fa-solid fa-gear text-2xl"></i>
               <span class="hidden navOption">Settings</span>
             </button>
@@ -192,13 +195,15 @@
     >
       <div class="secondary-light flex justify-between items-center mx-auto">
         <div class="logo flex items-end gap-x-2 sm:gap-x-5">
-          <a href="/feed/index.html" class="text-xl md:text-2xl lg:text-3xl font-bold outline-none" id="logo">
+          <a
+            href="/feed/index.html"
+            class="text-xl md:text-2xl lg:text-3xl font-bold outline-none"
+            id="logo"
+          >
             CodeUnity
           </a>
           <span class="hidden md:flex md:text-xl">|</span>
-          <span
-            class="muted hidden md:flex lg:text-xl"
-          >Explore</span>
+          <span class="muted hidden md:flex lg:text-xl">Explore</span>
         </div>
 
         <div class="flex justify-between items-center xl:w-1/2 lg:gap-4">
@@ -243,7 +248,8 @@
           <div class="flex items-center lg:gap-2">
             <button
               class="notifications flex items-center justify-center bg-white rounded-full w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 border mr-2 lg-mr-0"
-              disabled>
+              disabled
+            >
               <i class="fa-regular fa-bell text-lg lg:text-xl"></i>
             </button>
 
@@ -304,7 +310,6 @@
           </button>
         </div>
 
-
         <div class="mt-10" id="posts-container">
           <div class="loading-indicator">
             <span class="loader"></span>
@@ -354,7 +359,8 @@
           </div>
           <button
             class="bg-light py-5 rounded mt-5 w-5/6 flex items-center justify-center ml-10"
-            disabled>
+            disabled
+          >
             Show more connections
           </button>
         </section>
@@ -441,16 +447,21 @@
             Discover more tags
           </button>
         </section>
-
-        <a href="#logo" id="backButton" class="fixed bottom-24 right-1/2 xl:right-60 2xl:right-1/4 flex items-center gap-5" style="display: none;">
-          <span class="rounded-full w-12 h-12 bg-light flex items-center justify-center">
-            <i class="fa-solid fa-chevron-up"></i>
-          </span>
-          <span>Back to top</span>
-        </a>
       </aside>
     </div>
 
+    <a
+      href="#logo"
+      id="backButton"
+      class="fixed bottom-24 right-1/2 xl:right-60 2xl:right-1/4 items-center gap-5 hidden"
+    >
+      <span
+        class="rounded-full w-12 h-12 bg-light flex items-center justify-center"
+      >
+        <i class="fa-solid fa-chevron-up"></i>
+      </span>
+      <span>Back to top</span>
+    </a>
     <!-- Modal container -->
 
     <div
@@ -477,7 +488,10 @@
         class="flex justify-between flex-col lg:flex-row max-w-3xl lg:max-w-5xl 2xl:max-w-full mx-auto wrapper py-6 md:py-4 mb-16 text-sm lg:mb-0 lg:pt-9 lg:pb-10 px-4 sm:px-10 md:px-12 lg:pl-36 2xl:pr-12"
       >
         <div>
-          <a href="/feed/index.html" class="text-xl md:text-2xl font-bold mb-3 sm:mb-8 lg:mb-0">
+          <a
+            href="/feed/index.html"
+            class="text-xl md:text-2xl font-bold mb-3 sm:mb-8 lg:mb-0"
+          >
             CodeUnity
           </a>
         </div>
@@ -492,36 +506,41 @@
                 <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >FAQ</p
                 >
+                  FAQ
+                </p>
               </li>
               <li>
                 <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >Online support</p
                 >
+                  Online support
+                </p>
               </li>
               <li>
                 <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >Contact us</p
                 >
+                  Contact us
+                </p>
               </li>
               <li>
                 <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >Account settings</p
                 >
+                  Account settings
+                </p>
               </li>
               <li>
                 <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >Terms of use</p
                 >
+                  Terms of use
+                </p>
               </li>
             </ul>
           </div>
@@ -533,8 +552,9 @@
                 <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >About us</p
                 >
+                  About us
+                </p>
               </li>
             </ul>
           </div>
@@ -546,15 +566,17 @@
                 <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >Privacy Settings</p
                 >
+                  Privacy Settings
+                </p>
               </li>
               <li>
                 <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >Guidelines</p
                 >
+                  Guidelines
+                </p>
               </li>
             </ul>
           </div>

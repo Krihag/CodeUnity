@@ -44,15 +44,13 @@ export default {
     searchbar();
 
     searchButton.addEventListener("click", function () {
-      searchContainer.classList.toggle("w-96");
+      searchContainer.classList.toggle("w-80");
       searchContainer.classList.toggle("h-16");
-
       searchInput.classList.toggle("hidden");
       searchInput.classList.toggle("flex");
       searchInput.focus();
       searchContainer.classList.toggle("absolute");
-      searchContainer.classList.toggle("right-0");
-      searchContainer.classList.toggle("top-10");
+
       document
         .getElementById("search-result-container")
         .classList.add("hidden");
