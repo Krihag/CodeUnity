@@ -23,6 +23,13 @@ The task said to implement the following elements, as well as additional content
 - User can follow/unfollow a profile
 - User can react to a post content item
 
+## COLLABORATION
+By working together we've learned a lot from each other. It has been a great exercise and we've worked together really well, even though we have different ways of coding. 
+We have worked together every single day on Discord, collaborating through streaming and live share, and delegated tasks between us. We have tried to work mostly together, instead of individually, to learn as much as we could.
+
+### Planning the project
+To plan the project, we made a Trello-board with checklists and color themes based on how timeconsuming the different tasks would be. By making the Trello-board it was also easier to work structured and keep it organized all the way through the project.
+
 ## BUILT WITH
 ![HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
