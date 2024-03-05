@@ -31,6 +31,7 @@
     />
 
     <script type="module" src="/src/js/pages/post/index.js"></script>
+    <script defer src="/goBack.js"></script>
   </head>
 
   <body class="min-h-screen">
@@ -254,13 +255,17 @@
 
     <!-- Post container -->
 
-    <main class="max-w-7xl lg:pl-24 mx-auto min-h-full pt-4 pb-20 xl:py-20">
+    <main class="max-w-7xl lg:pl-24 mx-auto min-h-full pt-4 pb-20 xl:py-10">
       <div class="loading-indicator">
         <span class="loader"></span>
       </div>
-      <div
-        id="post-container">
-      </div>
+      <button id="backButton" class="flex items-center gap-5 mx-4 sm:mx-10 md:mx-12 lg:mx-16 mb-5">
+        <span class="rounded-full w-12 h-12 text-white bg-light flex items-center justify-center">
+          <i class="fa-solid fa-chevron-left"></i>
+        </span>
+        <p>Back to <span id="word">profile</span></p>
+      </button>
+      <div id="post-container"></div>
     </main>
 
     <!-- Modal container -->
