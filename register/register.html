@@ -31,7 +31,10 @@
       crossorigin="anonymous"
     ></script>
 
-    <script type="module" src="/src/js/pages/register/stepTwo/index.js"></script>
+    <script
+      type="module"
+      src="/src/js/pages/register/stepTwo/index.js"
+    ></script>
   </head>
   <body>
     <main class="flex mx-auto gap-32 min-h-screen">
@@ -116,7 +119,6 @@
                 <input
                   type="url"
                   name="profileBanner"
-                  required
                   class="py-1 px-3 rounded-sm border 2xl:text-lg mt-1.5"
                   id="bannerImageInput"
                 />
@@ -128,7 +130,6 @@
                 >
                 <textarea
                   name="biography"
-             
                   class="resize-none py-1 px-3 rounded-sm border 2xl:text-lg mt-1.5 h-44"
                   id="registerBio"
                 ></textarea>
@@ -138,10 +139,11 @@
                 <a
                   href="/profile/index.html"
                   class="text-sm sm:text-base 2xl:text-lg flex gap-5 text-secondary items-center"
-                  id="skip">Skip this step <i class="fa-solid fa-arrow-right"></i
+                  id="skip"
+                  >Skip this step <i class="fa-solid fa-arrow-right"></i
                 ></a>
                 <button
-                id="register-btn"
+                  id="register-btn"
                   type="submit"
                   class="bg-secondary p-3 mt-2 w-32 text-white rounded-md text-center"
                 >
@@ -161,9 +163,7 @@
         class="flex justify-between flex-col lg:flex-row max-w-3xl lg:max-w-5xl 2xl:max-w-full mx-auto wrapper py-6 md:py-4 text-sm lg:pt-9 lg:pb-10 px-4 sm:px-10 md:px-12 xl:pl-36 2xl:pr-12"
       >
         <div>
-          <h2 class="text-xl md:text-2xl font-bold">
-            CodeUnity
-          </h2>
+          <h2 class="text-xl md:text-2xl font-bold">CodeUnity</h2>
         </div>
 
         <div
