@@ -48,6 +48,7 @@ export default {
       searchContainer.classList.toggle("h-16");
 
       searchInput.classList.toggle("hidden");
+      searchInput.classList.toggle("flex");
       searchInput.focus();
       searchContainer.classList.toggle("absolute");
       searchContainer.classList.toggle("right-0");
