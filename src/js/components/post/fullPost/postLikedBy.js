@@ -9,7 +9,7 @@ export default async function postLikedBy(post, mainContainer) {
   );
 
   const contentContainer = document.createElement("div");
-  contentContainer.setAttribute("class", "flex md:gap-6 xl:gap-8 items-center");
+  contentContainer.setAttribute("class", "flex  items-center");
 
   const numLikes = post._count.reactions;
   const getRequest = await requests.get();

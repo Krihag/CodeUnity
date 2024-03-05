@@ -3,24 +3,21 @@ import register from "./register.js";
 import storage from "../../utils/storage.js";
 import seePassword from "./seePassword.js";
 
-
 register();
 
-const registerForm = document.querySelector("#registrationForm")
+const registerForm = document.querySelector("#registrationForm");
 
-registerForm.addEventListener("submit", function(e) {
-    e.preventDefault()
+registerForm.addEventListener("submit", function (e) {
+  e.preventDefault();
 
-    const body = {
-        password: document.querySelector("#password-input").value,
-        name: document.querySelector("#name").value,
-        email: document.querySelector("#email").value
-    }
+  const body = {
+    password: document.querySelector("#password").value,
+    name: document.querySelector("#name").value,
+    email: document.querySelector("#email").value,
+  };
 
-    storage.save("register", body)
-    window.location.href = "/register/register.html"
-})
+  storage.save("register", body);
+  window.location.href = "/register/register.html";
+});
 
 seePassword();
-
-
