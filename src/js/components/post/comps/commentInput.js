@@ -5,7 +5,11 @@ export default function commentInput(post) {
   container.setAttribute("class", "mt-4 flex items-center");
 
   const input = document.createElement("textarea");
-  input.placeholder = "Add a comment...";
+  if (post.comments.length === 0) {
+    input.placeholder = "Be the first to leave a comment..."
+  } else {
+    input.placeholder = "Add a comment...";
+  }
   input.setAttribute(
     "class",
     "flex-grow border p-2 rounded-md outline-none h-16 resize-none text-sm md:text-base"
