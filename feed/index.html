@@ -2,24 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       description="Connect with your coding community on our feed page. Share updates, offer feedback, and engage with friends' posts effortlessly. Join a vibrant ecosystem of tech enthusiasts, exchanging ideas and inspiration in real-time."
     />
 
     <title>CodeUnity | Feed</title>
 
-    <link rel="stylesheet" href="../dist/tailwind.css">
-    <link rel="stylesheet" href="../src/css/customStyles.css">
-    <link rel="stylesheet" href="../src/css/loadingIndicator.css">
+    <link rel="stylesheet" href="../dist/tailwind.css" />
+    <link rel="stylesheet" href="../src/css/customStyles.css" />
+    <link rel="stylesheet" href="../src/css/loadingIndicator.css" />
 
     <script
       src="https://kit.fontawesome.com/b515e79b0f.js"
       crossorigin="anonymous"
     ></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,700;1,900&display=swap"
       rel="stylesheet"
@@ -92,7 +92,10 @@
               <span class="hidden navOption">Explore</span>
             </a>
 
-            <button class="flex items-center settings navLink gap-6 w-8" disabled>
+            <button
+              class="flex items-center settings navLink gap-6 w-8"
+              disabled
+            >
               <i class="fa-solid fa-gear text-2xl"></i>
               <span class="hidden navOption">Settings</span>
             </button>
@@ -191,13 +194,14 @@
     >
       <div class="secondary-light flex justify-between items-center mx-auto">
         <div class="logo flex items-end gap-x-2 sm:gap-x-5">
-          <a href="/feed/index.html" class="text-xl md:text-2xl lg:text-3xl font-bold">
+          <a
+            href="/feed/index.html"
+            class="text-xl md:text-2xl lg:text-3xl font-bold"
+          >
             CodeUnity
           </a>
           <span class="hidden md:flex md:text-xl">|</span>
-          <span
-            class="muted hidden md:flex lg:text-xl"
-          >Feed</span>
+          <span class="muted hidden md:flex lg:text-xl">Feed</span>
         </div>
 
         <div class="flex justify-between items-center xl:w-1/2 lg:gap-4">
@@ -242,7 +246,8 @@
           <div class="flex items-center lg:gap-2">
             <button
               class="notifications flex items-center justify-center bg-white rounded-full w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 border mr-2 lg-mr-0"
-              disabled>
+              disabled
+            >
               <i class="fa-regular fa-bell text-lg lg:text-xl"></i>
             </button>
 
@@ -266,9 +271,7 @@
           <h1 class="text-lg sm:text-xl xl:text-2xl font-medium">
             Latest posts
           </h1>
-          <h2 class="text-sm md:text-base muted">
-            (from your network)
-          </h2>
+          <h2 class="text-sm md:text-base muted">(from your network)</h2>
         </div>
 
         <div class="flex gap-3 justify-between flex-col sm:flex-row">
@@ -315,7 +318,6 @@
 
       <!-- Discover-->
 
-
       <aside class="xl:max-w-sm 2xl:max-w-lg hidden xl:block">
         <h2 class="text-primary text-2xl mt-4 mb-8 font-medium">Discover</h2>
         <img src="/src/images/discover.jpg" alt="" class="customBorder" />
@@ -332,7 +334,8 @@
           <div id="connect-profiles"></div>
           <button
             class="bg-light py-5 rounded mt-5 w-5/6 flex items-center justify-center ml-10"
-            disabled>
+            disabled
+          >
             Show more connections
           </button>
         </section>
@@ -344,9 +347,10 @@
         >
           <h3 class="text-xl pb-8 font-medium">Popular tags</h3>
 
-          <div class="flex flex-col gap-y-4">
-            <a
-              href="#"
+          <div class="flex flex-col gap-y-4" id="popular-tags-container">
+            <button
+              value="HTML"
+              id="html-btn"
               class="w-full h-20 flex items-center justify-center relative"
             >
               <img
@@ -357,10 +361,10 @@
               <span class="absolute text-white 2xl:text-xl font-base"
                 >#HTML</span
               >
-            </a>
+            </button>
 
-            <a
-              href="#"
+            <button
+              value="CSS"
               class="w-full h-20 flex items-center justify-center relative"
             >
               <img
@@ -371,10 +375,10 @@
               <span class="absolute text-white 2xl:text-xl font-base"
                 >#CSS</span
               >
-            </a>
+            </button>
 
-            <a
-              href="#"
+            <button
+              value="JavaScript"
               class="w-full h-20 flex items-center justify-center relative"
             >
               <img
@@ -385,10 +389,10 @@
               <span class="absolute text-white 2xl:text-xl font-base"
                 >#JavaScript</span
               >
-            </a>
+            </button>
 
-            <a
-              href="#"
+            <button
+              value="Bootstrap"
               class="w-full h-20 flex items-center justify-center relative"
             >
               <img
@@ -399,10 +403,10 @@
               <span class="absolute text-white 2xl:text-xl font-base"
                 >#Bootstrap</span
               >
-            </a>
+            </button>
 
-            <a
-              href="#"
+            <button
+              value="Tailwind"
               class="w-full h-20 flex items-center justify-center relative"
             >
               <img
@@ -413,7 +417,7 @@
               <span class="absolute text-white 2xl:text-xl font-base"
                 >#Tailwind</span
               >
-            </a>
+            </button>
           </div>
           <button class="bg-light py-4 rounded w-full mt-3" disabled>
             Discover more tags
@@ -448,7 +452,10 @@
         class="flex justify-between flex-col lg:flex-row max-w-3xl lg:max-w-5xl 2xl:max-w-full mx-auto wrapper py-6 md:py-4 mb-16 text-sm lg:mb-0 lg:pt-9 lg:pb-10 px-4 sm:px-10 md:px-12 lg:pl-36 2xl:pr-12"
       >
         <div>
-          <a href="/feed/index.html" class="text-xl md:text-2xl font-bold mb-3 sm:mb-8 lg:mb-0">
+          <a
+            href="/feed/index.html"
+            class="text-xl md:text-2xl font-bold mb-3 sm:mb-8 lg:mb-0"
+          >
             CodeUnity
           </a>
         </div>
@@ -463,36 +470,41 @@
                 <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >FAQ</p
                 >
+                  FAQ
+                </p>
               </li>
               <li>
                 <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >Online support</p
                 >
+                  Online support
+                </p>
               </li>
               <li>
                 <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >Contact us</p
                 >
+                  Contact us
+                </p>
               </li>
               <li>
                 <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >Account settings</p
                 >
+                  Account settings
+                </p>
               </li>
               <li>
                 <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >Terms of use</p
                 >
+                  Terms of use
+                </p>
               </li>
             </ul>
           </div>
@@ -504,8 +516,9 @@
                 <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >About us</p
                 >
+                  About us
+                </p>
               </li>
             </ul>
           </div>
@@ -517,15 +530,17 @@
                 <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >Privacy Settings</p
                 >
+                  Privacy Settings
+                </p>
               </li>
               <li>
                 <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >Guidelines</p
                 >
+                  Guidelines
+                </p>
               </li>
             </ul>
           </div>

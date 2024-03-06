@@ -7,7 +7,7 @@ export default {
     `/social/posts?${postFilter}&limit=${limit}&page=${page}`,
 
   // - all posts by a specific tag (default tag is "CodeUnity")
-  byTag: (tag = "CodeUnity") => `/social/posts?tag=${tag}&${postFilter}`,
+  byTag: (tag = "CodeUnity") => `/social/posts?_tag=${tag}&${postFilter}`,
 
   //  -get  specific post by id
   byId: (id) => `/social/posts/${id}?${postFilter}`,

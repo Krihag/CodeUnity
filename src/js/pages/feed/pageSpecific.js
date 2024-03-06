@@ -6,6 +6,7 @@ import endpoints from "../../api/auth/data/endpoints/index.js";
 import filterPosts from "../../utils/helpers/filterPosts.js";
 import profileList from "../../utils/helpers/profileList.js";
 import createNewPost from "../../components/modal/specificModals/createNewPost.js";
+import popularTags from "./popularTags.js";
 
 const postsContainer = document.getElementById("posts-container");
 const sortPosts = document.getElementById("sort-posts");
@@ -64,4 +65,6 @@ export default async function pageSpecific() {
 
     return profiles;
   }
+
+  popularTags(getRequest, postsContainer);
 }
