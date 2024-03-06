@@ -6,7 +6,8 @@ import endpoints from "../../api/auth/data/endpoints/index.js";
 import filterPosts from "../../utils/helpers/filterPosts.js";
 import profileList from "../../utils/helpers/profileList.js";
 import createNewPost from "../../components/modal/specificModals/createNewPost.js";
-import popularTags from "./popularTags.js";
+
+import noPosts from "./noPosts.js";
 
 const postsContainer = document.getElementById("posts-container");
 const sortPosts = document.getElementById("sort-posts");
@@ -26,15 +27,7 @@ export default async function pageSpecific() {
 
     filterPosts(posts, sortPosts, postsContainer);
   } else {
-    postsContainer.innerHTML = `<div>
-    <h2 class="font-medium lg:text-lg xl:text-xl text-secondary mt-16">Woops... Nothing to see here!</h2>
-    <div class="mt-4">
-    <p class="text-sm md:text-base xl:text-lg">It seems like this area is a bit empty at the moment, but don't worry - there is plenty to explore!</p>
-    <p class="text-sm md:text-base xl:text-lg">Expand your network by following people you might know or someone who inspires you.</p>
-    <p class="my-3 text-sm md:text-base xl:text-lg">Ready to dive in? Click below to start exploring!</p>
-
-    <a class="text-sm md:text-base bg-light p-3 lg:px-8 lg:py-4 rounded flex items-center justify-center max-w-44 mt-8" href="/explore/">Explore posts</a>
-    </div>`;
+    postsContainer.append(noPosts());
   }
 
   const { data: profiles, meta: profilePage } = await getRequest.fetch(
@@ -65,6 +58,4 @@ export default async function pageSpecific() {
 
     return profiles;
   }
-
-  popularTags(getRequest, postsContainer);
 }
