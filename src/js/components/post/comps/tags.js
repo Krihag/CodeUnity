@@ -5,7 +5,7 @@ export default function tags(tags) {
   tags.forEach((tag) => {
     const hashtag = tag.includes("#") ? tag : `#${tag}`;
     const span = document.createElement("span");
-    span.setAttribute("class", "text-secondary text-sm 2xl:text-lg cursor-pointer");
+    span.setAttribute("class", "text-secondary text-sm xl:text-base 2xl:text-lg cursor-pointer");
     span.textContent = hashtag;
     container.appendChild(span);
   });
