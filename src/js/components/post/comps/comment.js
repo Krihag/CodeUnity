@@ -69,7 +69,6 @@ export default function displayComments(post, isOwner = false) {
           "fa-solid fa-trash cursor-pointer text-gray-600 p-3"
         );
         deleteComment.addEventListener("click", async () => {
-          // await requests.deleteComment(post.id, comment.id);
           deleteOptions(post, comment);
         });
         nameAndDelete.append(profileName, deleteComment);
@@ -97,6 +96,7 @@ export default function displayComments(post, isOwner = false) {
     });
   } else {
     const noComments = document.createElement("p");
+    noComments.setAttribute("class", "bg-gray-100 w-full py-5")
     noComments.textContent = "No comments yet";
 
     commentsContainer.appendChild(noComments);
