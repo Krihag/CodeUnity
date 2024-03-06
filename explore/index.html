@@ -276,28 +276,27 @@ class="px-3 sm:px-8 lg:pl-36 py-4 lg:py-8 max-w-3xl lg:max-w-5xl 2xl:max-w-full 
           <div
             class="bg-white flex px-4 md:px-8 rounded-md max-w-72 sm:max-w-sm md:max-w-md gap-8 items-center"
           >
-            <span
-              class="py-4 text-sm sm:text-base lg:text-base font-normal text-secondary border-r pr-4 md:pr-8"
-              >Sort by:</span
-            >
-            <select
-              name="sort-posts"
-              id="sort-posts"
-              class="text-secondary h-full outline-none text-sm sm:text-base sm:px-0"
-            >
-              <option value="recent" class="py-2 text-base">
-                Recent posts
-              </option>
-              <option value="oldest" class="py-2 text-base">
-                Oldest posts
-              </option>
-              <option value="most-liked" class="py-2 text-base">
-                Most liked
-              </option>
-              <option value="most-commented" class="py-2 text-base">
-                Most commented
-              </option>
-            </select>
+          <span
+          class="py-4 text-sm sm:text-base lg:text-base font-normal text-secondary border-r pr-4 md:pr-8"
+          >Sort by:</span
+        >
+        <select
+          name="sort-posts"
+          id="sort-posts"
+          class="text-secondary h-full outline-none text-sm sm:text-base sm:px-0 bg-white"
+        >
+          <option value="latest" class="py-2 text-base" selected>
+            All posts
+          </option>
+          <option value="order" class="py-2 text-base">Title A-Z</option>
+          <option value="reverse" class="py-2 text-base">Title Z-A</option>
+          <option value="most-liked" class="py-2 text-base">
+            Most liked
+          </option>
+          <option value="most-commented" class="py-2 text-base">
+            Most commented
+          </option>
+        </select>
           </div>
 
           <button
