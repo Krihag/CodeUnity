@@ -8,7 +8,7 @@ export default function commentInput(post) {
   input.placeholder = "Add a comment...";
   input.setAttribute(
     "class",
-    "flex-grow border p-2 rounded-md outline-none h-16 resize-none"
+    "flex-grow border p-2 rounded-md outline-none h-16 resize-none text-sm md:text-base"
   );
 
   const button = document.createElement("button");
@@ -19,7 +19,7 @@ export default function commentInput(post) {
   svg.setAttributeNS(null, "viewBox", "0 0 24 24");
   svg.setAttributeNS(null, "stroke-width", "1.5");
   svg.setAttributeNS(null, "stroke", "currentColor");
-  svg.setAttributeNS(null, "class", "w-6 h-6"); // Corrected line
+  svg.setAttributeNS(null, "class", "w-6 h-6"); 
 
   const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
   path.setAttributeNS(null, "stroke-linecap", "round");
