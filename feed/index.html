@@ -201,45 +201,35 @@
             CodeUnity
           </a>
           <span class="hidden md:flex md:text-xl">|</span>
-          <span class="muted hidden md:flex lg:text-xl xl:text-base 2xl:text-lg">Feed</span>
+          <span class="muted hidden md:flex lg:text-xl xl:text-base 2xl:text-lg"
+            >Feed</span
+          >
         </div>
 
         <div class="flex justify-between items-center xl:w-1/2 lg:gap-4">
-          <div
-            class="bg-white p-1 md:p-2 rounded-full lg:rounded-md flex items-center justify-center w-12 h-12 md:w-14 md:h-14 lg:h-16 lg:min-w-72 xl:w-2/3 border relative mr-2 lg:mr-0"
-          >
-            <input
-              type="search"
-              placeholder="Search..."
-              class="hidden border-none outline-none flex-grow px-4 lg:w-full lg:flex"
-              id="search-input"
-              autocomplete="off"
-            />
-            <div class="px-4 py-2 rounded-md" id="search-button" type="button">
-              <i class="fa-solid fa-magnifying-glass lg:text-lg"></i>
+          <div class="relative lg:w-full xl:w-2/3 z-40">
+            <div
+              id="search-container"
+              class="bg-white p-1 md:p-2 rounded-full lg:rounded-md flex items-center justify-center w-12 h-12 lg:w-full lg:h-16 border mr-2 right-[-130px] top-10 lg:mr-0 lg:static"
+            >
+              <input
+                type="search"
+                placeholder="Search..."
+                class="hidden border-none outline-none px-4 w-3/4 lg:w-full lg:flex"
+                id="search-input"
+                autocomplete="off"
+              />
               <div
-                class="hidden absolute w-full bg-white z-30 left-0 top-14 py-2"
-                id="search-result-container"
+                class="px-4 py-2 rounded-md"
+                id="search-button"
+                type="button"
               >
-                <a
-                  class="border-t py-4 flex justify-between flex-wrap text-lg hover:bg-light duration-200 px-8"
-                >
-                  <div>title</div>
-                  <div>by <span>username</span></div>
-                </a>
-                <a
-                  class="border-t py-4 flex justify-between flex-wrap text-lg hover:bg-light duration-200 px-8"
-                >
-                  <div>title</div>
-                  <div>by <span>username</span></div>
-                </a>
-                <a
-                  class="border-t py-4 flex justify-between flex-wrap text-lg hover:bg-light duration-200 px-8"
-                >
-                  <div>title</div>
-                  <div>by <span>username</span></div>
-                </a>
+                <i class="fa-solid fa-magnifying-glass lg:text-lg"></i>
               </div>
+              <div
+                class="hidden absolute bg-white left-0 top-14 py-2 w-full"
+                id="search-result-container"
+              ></div>
             </div>
           </div>
 
@@ -268,7 +258,9 @@
     >
       <main class="w-full max-w-5xl">
         <div class="flex items-center my-6 xl:mt-4 xl:mb-8 gap-4">
-          <h1 class="text-lg sm:text-xl xl:text-2xl font-medium xl:font-normal 2xl:font-medium">
+          <h1
+            class="text-lg sm:text-xl xl:text-2xl font-medium xl:font-normal 2xl:font-medium"
+          >
             Latest posts
           </h1>
           <h2 class="text-sm md:text-base muted">(from your network)</h2>
@@ -319,7 +311,11 @@
       <!-- Discover-->
 
       <aside class="xl:max-w-sm 2xl:max-w-lg hidden xl:block">
-        <h2 class="text-primary text-2xl mt-4 mb-8 font-medium xl:font-normal 2xl:font-medium">Discover</h2>
+        <h2
+          class="text-primary text-2xl mt-4 mb-8 font-medium xl:font-normal 2xl:font-medium"
+        >
+          Discover
+        </h2>
         <img src="/src/images/discover.jpg" alt="" class="customBorder" />
 
         <!-- Connect with others -->
