@@ -12,7 +12,7 @@ export default function postTags(ele, tags) {
   tagsContainer.setAttribute("class", "flex gap-4 flex-col");
 
   const tagInputContainer = document.createElement("div");
-  tagInputContainer.setAttribute("class", "w-full md:w-1/2 flex h-10 2xl:h-20 rounded my-2");
+  tagInputContainer.setAttribute("class", "w-full md:w-1/2 flex h-10 2xl:h-20 my-2");
 
   const hashtag = document.createElement("span");
   hashtag.setAttribute(
