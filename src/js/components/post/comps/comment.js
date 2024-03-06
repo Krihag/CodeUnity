@@ -94,12 +94,6 @@ export default function displayComments(post, isOwner = false) {
       container.append(commentAuthor);
       commentsContainer.append(container);
     });
-  } else {
-    const noComments = document.createElement("p");
-    noComments.setAttribute("class", "bg-gray-100 w-full py-5 my-5")
-    noComments.textContent = "No comments yet";
-
-    commentsContainer.appendChild(noComments);
   }
 
   return commentsContainer;
