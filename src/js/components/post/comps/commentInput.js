@@ -49,6 +49,8 @@ export default function commentInput(post) {
       );
     commentsCount.textContent++;
     input.value = "";
+
+    input.placeholder = "Add a comment...";
   });
 
   return container;
