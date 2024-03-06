@@ -183,79 +183,79 @@
       </div>
     </div>
 
-    <!--Header-->
+<!--Header-->
 
-    <header
-      class="px-3 sm:px-8 lg:pl-36 py-4 lg:py-8 max-w-3xl lg:max-w-5xl 2xl:max-w-full mx-auto 2xl:pr-12 wrapper"
+<header
+class="px-3 sm:px-8 lg:pl-36 py-4 lg:py-8 max-w-3xl lg:max-w-5xl 2xl:max-w-full mx-auto 2xl:pr-12 wrapper"
+>
+<div class="secondary-light flex justify-between items-center mx-auto">
+  <div class="logo flex items-center gap-x-2 sm:gap-x-5">
+    <a
+      href="/feed/"
+      class="text-xl md:text-2xl lg:text-3xl font-bold xl:font-semibold 2xl:font-bold"
     >
-      <div class="secondary-light flex justify-between items-center mx-auto">
-        <div class="logo flex items-end gap-x-2 sm:gap-x-5">
+      CodeUnity
+    </a>
+    <span class="hidden md:flex md:text-xl">|</span>
+    <span class="muted hidden md:flex lg:text-xl xl:text-base 2xl:text-lg">Post</span>
+  </div>
+
+  <div class="flex justify-between items-center xl:w-1/2 lg:gap-4">
+    <div
+      class="bg-white p-1 md:p-2 rounded-full lg:rounded-md flex items-center justify-center w-12 h-12 md:w-14 md:h-14 lg:h-16 lg:min-w-72 xl:w-2/3 border relative mr-2 lg:mr-0"
+    >
+      <input
+        type="search"
+        placeholder="Search..."
+        class="hidden border-none outline-none flex-grow px-4 lg:w-full lg:flex"
+        id="search-input"
+        autocomplete="off"
+      />
+      <div class="px-4 py-2 rounded-md" id="search-button" type="button">
+        <i class="fa-solid fa-magnifying-glass lg:text-lg"></i>
+        <div
+          class="hidden absolute w-full bg-white z-30 left-0 top-14 py-2"
+          id="search-result-container"
+        >
           <a
-            href="/feed/index.html"
-            class="text-xl md:text-2xl lg:text-3xl font-bold"
+            class="border-t py-4 flex justify-between flex-wrap text-lg hover:bg-light duration-200 px-8"
           >
-            CodeUnity
+            <div>title</div>
+            <div>by <span>username</span></div>
           </a>
-          <span class="hidden md:flex md:text-xl">|</span>
-          <span class="muted hidden md:flex lg:text-xl">Post</span>
-        </div>
-
-        <div class="flex justify-between items-center xl:w-1/2 lg:gap-4">
-          <div
-            class="bg-white p-1 md:p-2 rounded-full lg:rounded-md flex items-center justify-center w-12 h-12 md:w-14 md:h-14 lg:h-16 lg:min-w-72 xl:w-2/3 border relative mr-2 lg:mr-0"
+          <a
+            class="border-t py-4 flex justify-between flex-wrap text-lg hover:bg-light duration-200 px-8"
           >
-            <input
-              type="search"
-              placeholder="Search..."
-              class="hidden border-none outline-none flex-grow px-4 lg:w-full lg:flex"
-              id="search-input"
-              autocomplete="off"
-            />
-            <div class="px-4 py-2 rounded-md" id="search-button" type="button">
-              <i class="fa-solid fa-magnifying-glass lg:text-lg"></i>
-              <div
-                class="hidden absolute w-full bg-white z-30 left-0 top-14 py-2"
-                id="search-result-container"
-              >
-                <a
-                  class="border-t py-4 flex justify-between flex-wrap text-lg hover:bg-light duration-200 px-8"
-                >
-                  <div>title</div>
-                  <div>by <span>username</span></div>
-                </a>
-                <a
-                  class="border-t py-4 flex justify-between flex-wrap text-lg hover:bg-light duration-200 px-8"
-                >
-                  <div>title</div>
-                  <div>by <span>username</span></div>
-                </a>
-                <a
-                  class="border-t py-4 flex justify-between flex-wrap text-lg hover:bg-light duration-200 px-8"
-                >
-                  <div>title</div>
-                  <div>by <span>username</span></div>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex items-center lg:gap-2">
-            <button
-              class="notifications flex items-center justify-center bg-white rounded-full w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 border mr-2 lg-mr-0"
-              disabled
-            >
-              <i class="fa-regular fa-bell text-lg lg:text-xl"></i>
-            </button>
-
-            <a
-              href="#"
-              class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16"
-              id="headerProfile"
-            ></a>
-          </div>
+            <div>title</div>
+            <div>by <span>username</span></div>
+          </a>
+          <a
+            class="border-t py-4 flex justify-between flex-wrap text-lg hover:bg-light duration-200 px-8"
+          >
+            <div>title</div>
+            <div>by <span>username</span></div>
+          </a>
         </div>
       </div>
-    </header>
+    </div>
+
+    <div class="flex items-center lg:gap-2">
+      <button
+        class="notifications flex items-center justify-center bg-white rounded-full w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 border mr-2 lg-mr-0"
+        disabled
+      >
+        <i class="fa-regular fa-bell text-lg lg:text-xl"></i>
+      </button>
+
+      <a
+        href="#"
+        class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16"
+        id="headerProfile"
+      ></a>
+    </div>
+  </div>
+</div>
+</header>
 
     <!-- Post container -->
 
