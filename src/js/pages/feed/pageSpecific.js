@@ -6,7 +6,7 @@ import endpoints from "../../api/auth/data/endpoints/index.js";
 import filterPosts from "../../utils/helpers/filterPosts.js";
 import profileList from "../../utils/helpers/profileList.js";
 import createNewPost from "../../components/modal/specificModals/createNewPost.js";
-
+import backToTop from "../../utils/helpers/backToTop.js";
 import noPosts from "./noPosts.js";
 
 const postsContainer = document.getElementById("posts-container");
@@ -55,6 +55,8 @@ export default async function pageSpecific() {
       profiles = [...profiles, ...newProfiles];
       prevPage = newPage;
     }
+
+    backToTop();
 
     return profiles;
   }

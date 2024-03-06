@@ -7,6 +7,7 @@ import filterPosts from "../../utils/helpers/filterPosts.js";
 import profileList from "../../utils/helpers/profileList.js";
 import createNewPost from "../../components/modal/specificModals/createNewPost.js";
 import popularTags from "./popularTags.js";
+import backToTop from "../../utils/helpers/backToTop.js";
 
 const postsContainer = document.getElementById("posts-container");
 const sortPosts = document.getElementById("sort-posts");
@@ -53,6 +54,7 @@ export default async function pageSpecific() {
     }
 
     popularTags(getRequest, postsContainer);
+    backToTop();
 
     return profiles;
   }
