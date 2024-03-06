@@ -9,7 +9,7 @@ export default function deleteText(ele) {
   const paragraph = document.createElement("p");
   paragraph.setAttribute("class", "px-8 py-1 text-center text-lg");
   paragraph.textContent =
-    "This action cannot be undone. The post and all associated data will be permanently removed from the system. Please consider carefully before proceeding.";
+    "This action cannot be undone. The associated data will be permanently removed from the system. Please consider carefully before proceeding.";
 
   container.append(headline, paragraph);
 
