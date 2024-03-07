@@ -4,6 +4,7 @@ import profileComponents from "../../components/profile/index.js";
 import postTemp from "../../components/post/thumbnail/index.js";
 import endpoints from "../../api/auth/data/endpoints/index.js";
 import requests from "../../api/auth/requests/index.js";
+import metaProfile from "../../components/profile/metaProfile.js";
 
 const postContainer = document.getElementById("posts-container");
 const profileOwner = document.querySelector("#profileOwner");
@@ -39,12 +40,13 @@ export default async function pageSpecific() {
   const { data: profilePosts } = await getRequest.fetch(
     endpoints.posts.byProfile(name)
   );
-  console.log(profile);
-  console.log(profilePosts);
-  const { data: allPosts } = await getRequest.fetch(endpoints.posts.all());
-  profilePosts.forEach((post) => postTemp(post, postContainer));
 
-  console.log(allPosts);
+  const { data: allPosts } = await getRequest.fetch(endpoints.posts.all());
+  if (profilePosts.length > 0) {
+    profilePosts.forEach((post) => postTemp(post, postContainer));
+  } else {
+    postContainer.innerHTML = `<div class="text-center text-2xl">No posts by user yet</div>`;
+  }
 
   const isOwner = name === user.name ? true : false;
 
@@ -52,5 +54,6 @@ export default async function pageSpecific() {
 
   profileOwner.textContent = isOwner ? "Your Profile" : "@" + name;
 
+  metaProfile(name);
   return data;
 }

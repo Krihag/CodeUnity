@@ -4,6 +4,7 @@ import fullPost from "../../components/post/fullPost/index.js";
 import requests from "../../api/auth/requests/index.js";
 import endpoints from "../../api/auth/data/endpoints/index.js";
 import expandSidebar from "../../utils/helpers/expandSidebar.js";
+import goBack from "../../utils/helpers/goBack.js";
 
 export default async function () {
   let params = new URLSearchParams(window.location.search);
@@ -15,4 +16,5 @@ export default async function () {
 
   const isOwner = user.name === post.author.name;
   fullPost(post, isOwner);
+  goBack();
 }

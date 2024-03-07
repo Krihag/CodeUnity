@@ -18,7 +18,12 @@ export default function createNewPost() {
     name: "media",
   };
 
-  const element2 = { type: "input", text: "Title", name: "title" };
+  const element2 = {
+    type: "input",
+    text: "Title",
+    name: "title",
+    required: true,
+  };
   const element3 = {
     type: "textarea",
     text: "Description",

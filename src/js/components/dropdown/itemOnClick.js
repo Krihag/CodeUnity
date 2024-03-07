@@ -9,7 +9,6 @@ export default function itemOnClick(item, post) {
   } else if (item.modal) {
     item.modal(post);
   } else if (item.request) {
-    console.log(item.request);
     item.request == "delete" && deleteOptions(post);
   }
 }

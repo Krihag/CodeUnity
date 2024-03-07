@@ -1,5 +1,6 @@
 import config from "../config.js";
 import confirmation from "../../utils/helpers/confirmAction.js";
+import displayError from "../../utils/helpers/displayError.js";
 
 /**
  * Represents an API authentication class.
@@ -52,8 +53,10 @@ export default class Auth {
 
       if (!response.ok) {
         if (data.errors) {
+          displayError(data.errors[0].message);
           throw new Error(data.errors[0].message);
         } else {
+          displayError("Unknown error occurred");
           throw new Error("Something went wrong: " + response);
         }
       }

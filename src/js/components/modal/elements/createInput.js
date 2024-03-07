@@ -10,6 +10,8 @@ export default function input(ele) {
     "class",
     "w-full border h-10 2xl:h-14 rounded mb-4 mt-2 outline-none pl-3 text-sm md:text-base"
   );
+
+  ele.required && input.setAttribute("required", "true");
   ele.value && (input.value = ele.value);
   ele.placeholder && input.setAttribute("placeholder", ele.placeholder);
   container.append(label, input);

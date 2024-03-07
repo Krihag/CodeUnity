@@ -9,14 +9,17 @@ export default async function postLikedBy(post, mainContainer) {
   );
 
   const contentContainer = document.createElement("div");
-  contentContainer.setAttribute("class", "flex md:gap-6 xl:gap-8 items-center");
+  contentContainer.setAttribute("class", "flex  items-center");
 
   const numLikes = post._count.reactions;
   const getRequest = await requests.get();
 
   const imgContainer = document.createElement("div");
 
-  imgContainer.setAttribute("class", "images relative w-20 flex items-center");
+  imgContainer.setAttribute(
+    "class",
+    "images relative w-24 flex justify-center items-center"
+  );
 
   let text;
 
@@ -52,10 +55,10 @@ export default async function postLikedBy(post, mainContainer) {
       const userImg = document.createElement("img");
       userImg.setAttribute(
         "class",
-        "rounded-full h-10 w-10 object-cover absolute border-gray-300 border border-gray-100 "
+        "rounded-full h-10 w-10 object-cover absolute border border-gray-500 left-" +
+          imgLeft
       );
 
-      userImg.classList.add(`left-${imgLeft}`);
       imgLeft += 6;
 
       imgLink.href = `/profile/?name=${personLiked.name}`;

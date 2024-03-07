@@ -1,3 +1,5 @@
+import metaPost from "./metaPost.js";
+
 export default function postBody(post) {
   const container = document.createElement("div");
   container.setAttribute("class", "md:pt-2");
@@ -24,5 +26,6 @@ export default function postBody(post) {
   container.appendChild(title);
   container.appendChild(body);
 
+  metaPost(body);
   return container;
 }

@@ -17,7 +17,9 @@ export default async function posts() {
   } else return;
 
   const { data: profilePosts } = await getRequest.fetch(endpoint);
-  document.getElementById("posts-count").textContent = profilePosts.length;
+
+  curPage.includes("/profile/") &&
+    (document.getElementById("posts-count").textContent = profilePosts.length);
   const postContainer = document.getElementById("posts-container");
 
   postContainer.innerHTML = "";

@@ -5,6 +5,7 @@ import endpoints from "../data/endpoints/index.js";
 import storage from "../../../utils/storage.js";
 import updates from "../../update/index.js";
 import modal from "../../handlers/eventListeners/modalToggle.js";
+import updateComments from "../../update/posts/updateComments.js";
 
 const request = (
   body,
@@ -33,13 +34,14 @@ export default {
   },
 
   // Change profile media request (works with either banner or avatar)
-  profileMedia: async function (body) {
+  profileMedia: async function (body, message = "Updated profile media") {
     const username = this.name;
     const data = request(
       body,
       endpoints.profiles.changeImg(username),
       headers.withAuthToken(),
-      "PUT"
+      "PUT",
+      message
     );
     const response = await data.fetch();
     updates.avatar(body, response, username);
@@ -80,6 +82,10 @@ export default {
       message
     );
     const response = await data.fetch();
+
+    if (response.data) {
+      updateComments(id);
+    }
   },
 
   // Update post
@@ -123,8 +129,9 @@ export default {
   // delete comment
 
   deleteComment: async function (
-    commentId,
     postId,
+    commentId,
+
     message = "Comment deleted"
   ) {
     const data = request(
@@ -137,8 +144,7 @@ export default {
     const response = await data.fetch();
 
     if (response == "deleted") {
-      modal.close();
-      updates.posts();
+      updateComments(postId);
     }
   },
 
@@ -151,6 +157,5 @@ export default {
       "put"
     );
     const response = await data.fetch();
-    console.log(response);
   },
 };

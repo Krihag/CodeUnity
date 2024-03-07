@@ -20,7 +20,7 @@ const registerData = storage.load("register");
 console.log(registerData);
 
 async function registerLogin(registerData) {
-  //   storage.remove("register");
+  storage.remove("register");
   const data = await requests.register(registerData);
 
   if (data) {
@@ -30,8 +30,8 @@ async function registerLogin(registerData) {
 
 document.querySelector("#skip").addEventListener("click", async function (e) {
   e.preventDefault();
-  //   storage.remove("register");
-  //   registerLogin(registerData);
+
+  registerLogin(registerData);
 });
 
 registerForm.addEventListener("submit", async function (e) {

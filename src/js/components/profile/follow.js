@@ -39,7 +39,7 @@ export default async function follow(profile, follow = false, isOwner = false) {
     const followerDiv = document.createElement("div");
     followerDiv.setAttribute(
       "class",
-      "flex justify-between py-4 md:py-6 items-center" + border
+      "flex justify-between py-4 md:py-6 items-center " + border
     );
 
     const imageDiv = document.createElement("div");
@@ -56,7 +56,10 @@ export default async function follow(profile, follow = false, isOwner = false) {
     const span = document.createElement("span");
 
     const nameHeading = document.createElement("h4");
-    nameHeading.setAttribute("class", "text-sm sm:text-base lg:text-lg font-medium");
+    nameHeading.setAttribute(
+      "class",
+      "text-sm sm:text-base lg:text-lg font-medium"
+    );
     nameHeading.textContent = currentUser;
 
     const profileLinkHeading = document.createElement("a");

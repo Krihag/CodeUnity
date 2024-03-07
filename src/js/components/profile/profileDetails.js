@@ -15,7 +15,7 @@ export default function profileDetails(profile) {
 
     const profileBio = document.createElement("p");
     profileBio.setAttribute("class",
-        "text-lg py-4 sm:py-6"
+        "text-sm md:text-base xl:text-lg py-4 sm:py-6 leading-relaxed"
     );
     profileBio.setAttribute("id", "profileBio");
     profileBio.textContent = profile.bio;

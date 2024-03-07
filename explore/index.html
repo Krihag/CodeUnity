@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="../dist/tailwind.css" />
     <link rel="stylesheet" href="../src/css/customStyles.css" />
+    <link rel="stylesheet" href="../src/css/loadingIndicator.css" />
 
     <script
       src="https://kit.fontawesome.com/b515e79b0f.js"
@@ -84,22 +85,25 @@
             </a>
 
             <a
-              href=""
+              href="/explore/"
               class="flex justify-center items-center groups navLink gap-6"
             >
               <i class="fa-solid fa-globe text-2xl w-8"></i>
               <span class="hidden navOption">Explore</span>
             </a>
 
-            <a href="" class="flex items-center settings navLink gap-6">
-              <i class="fa-solid fa-gear text-2xl w-8"></i>
+            <button
+              class="flex items-center settings navLink gap-6 w-8"
+              disabled
+            >
+              <i class="fa-solid fa-gear text-2xl"></i>
               <span class="hidden navOption">Settings</span>
-            </a>
+            </button>
 
-            <a href="" class="flex items-center inbox navLink gap-6">
-              <i class="fa-solid fa-envelope text-2xl w-8"></i>
+            <button class="flex items-center inbox navLink gap-6 w-8" disabled>
+              <i class="fa-solid fa-envelope text-2xl"></i>
               <span class="hidden navOption">Inbox</span>
-            </a>
+            </button>
           </nav>
         </div>
       </div>
@@ -114,7 +118,7 @@
     <!-- Mobile navigationbar -->
 
     <div
-      class="bg-primary w-full fixed bottom-0 h-16 sm:h-20 md:h-20 items-center flex lg:hidden"
+      class="bg-primary w-full fixed bottom-0 h-16 sm:h-20 md:h-20 items-center flex lg:hidden z-40"
     >
       <nav class="flex mx-auto gap-8 sm:gap-20">
         <a href="/feed/" class="home flex flex-col text-center">
@@ -137,7 +141,7 @@
           <span class="text-xxs">NEW POST</span>
         </button>
 
-        <a href="/feed/index.html" class="explore flex flex-col text-center">
+        <a href="/explore/" class="explore flex flex-col text-center">
           <i class="fa-solid fa-globe text-lg sm:text-xl md:text-2xl"></i>
           <span class="text-xxs">EXPLORE</span>
         </a>
@@ -157,7 +161,7 @@
       >
         <div class="pb-3 pt-2 flex items-center justify-between w-full">
           <p class="font-medium text-primary">MORE OPTIONS</p>
-          <i class="fa-solid fa-xmark text-lg"></i>
+          <i class="fa-solid fa-xmark text-lg" id="moreOptionsClose"></i>
         </div>
 
         <span class="border-b w-full"></span>
@@ -189,57 +193,50 @@
       class="px-3 sm:px-8 lg:pl-36 py-4 lg:py-8 max-w-3xl lg:max-w-5xl 2xl:max-w-full mx-auto 2xl:pr-12 wrapper"
     >
       <div class="secondary-light flex justify-between items-center mx-auto">
-        <div class="logo flex items-end gap-x-2 sm:gap-x-5">
-          <strong class="text-2xl lg:text-3xl">CodeUnity</strong>
+        <div class="logo flex items-center gap-x-2 sm:gap-x-5">
+          <a
+            href="/feed/"
+            class="text-xl md:text-2xl lg:text-3xl font-bold xl:font-semibold 2xl:font-bold"
+          >
+            CodeUnity
+          </a>
           <span class="hidden md:flex md:text-xl">|</span>
-          <span class="muted hidden md:flex xl:text-xl" id="profileOwner"
+          <span class="muted hidden md:flex lg:text-xl xl:text-base 2xl:text-lg"
             >Explore</span
           >
         </div>
 
         <div class="flex justify-between items-center xl:w-1/2 lg:gap-4">
-          <form
-            action="search"
-            class="bg-white p-1 md:p-2 rounded-full lg:rounded-md flex items-center justify-center w-12 h-12 md:w-14 md:h-14 lg:h-16 lg:min-w-72 xl:w-2/3 border relative mr-2 lg:mr-0"
-          >
-            <input
-              type="search"
-              placeholder="Search..."
-              class="hidden border-none outline-none flex-grow px-4 lg:w-full lg:flex"
-              id="search-input"
-              autocomplete="off"
-            />
-            <button class="px-4 py-2 rounded-md" id="search-button">
-              <i class="fa-solid fa-magnifying-glass lg:text-lg"></i>
+          <div class="relative lg:w-full xl:w-2/3 z-40">
+            <div
+              id="search-container"
+              class="bg-white p-1 md:p-2 rounded-full lg:rounded-md flex items-center justify-center w-12 h-12 lg:w-full lg:h-16 border mr-2 right-[-130px] top-10 lg:mr-0 lg:static"
+            >
+              <input
+                type="search"
+                placeholder="Search..."
+                class="hidden border-none outline-none px-4 w-3/4 lg:w-full lg:flex"
+                id="search-input"
+                autocomplete="off"
+              />
               <div
-                class="hidden absolute w-full bg-white z-30 left-0 top-14 py-2"
-                id="search-result-container"
+                class="px-4 py-2 rounded-md"
+                id="search-button"
+                type="button"
               >
-                <a
-                  class="border-t py-4 flex justify-between flex-wrap text-lg hover:bg-light duration-200 px-8"
-                >
-                  <div>title</div>
-                  <div>by <span>username</span></div>
-                </a>
-                <a
-                  class="border-t py-4 flex justify-between flex-wrap text-lg hover:bg-light duration-200 px-8"
-                >
-                  <div>title</div>
-                  <div>by <span>username</span></div>
-                </a>
-                <a
-                  class="border-t py-4 flex justify-between flex-wrap text-lg hover:bg-light duration-200 px-8"
-                >
-                  <div>title</div>
-                  <div>by <span>username</span></div>
-                </a>
+                <i class="fa-solid fa-magnifying-glass lg:text-lg"></i>
               </div>
-            </button>
-          </form>
+              <div
+                class="hidden absolute bg-white left-0 top-14 py-2 w-full"
+                id="search-result-container"
+              ></div>
+            </div>
+          </div>
 
           <div class="flex items-center lg:gap-2">
             <button
               class="notifications flex items-center justify-center bg-white rounded-full w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 border mr-2 lg-mr-0"
+              disabled
             >
               <i class="fa-regular fa-bell text-lg lg:text-xl"></i>
             </button>
@@ -276,14 +273,13 @@
             <select
               name="sort-posts"
               id="sort-posts"
-              class="text-secondary h-full outline-none text-sm sm:text-base sm:px-0"
+              class="text-secondary h-full outline-none text-sm sm:text-base sm:px-0 bg-white"
             >
-              <option value="recent" class="py-2 text-base">
-                Recent posts
+              <option value="latest" class="py-2 text-base" selected>
+                All posts
               </option>
-              <option value="oldest" class="py-2 text-base">
-                Oldest posts
-              </option>
+              <option value="order" class="py-2 text-base">Title A-Z</option>
+              <option value="reverse" class="py-2 text-base">Title Z-A</option>
               <option value="most-liked" class="py-2 text-base">
                 Most liked
               </option>
@@ -294,12 +290,18 @@
           </div>
 
           <button
+            id="create-post-btn"
             class="hidden lg:flex items-center justify-center text-white bg-secondary lg:px-8 lg:py-2 rounded hover:bg-light hover:text-primary duration-500"
           >
             New post
           </button>
         </div>
-        <div class="mt-10" id="posts-container"></div>
+
+        <div class="mt-10" id="posts-container">
+          <div class="loading-indicator">
+            <span class="loader"></span>
+          </div>
+        </div>
       </main>
 
       <!-- Discover-->
@@ -337,9 +339,14 @@
 
         <section class="bg-white mt-6 2xl:mt-10 customBorder py-6 2xl:py-8">
           <h3 class="text-xl font-medium px-10 pb-3">Connect with others</h3>
-          <div id="connect-profiles"></div>
+          <div id="connect-profiles">
+            <div class="loading-indicator mt-4 mb-16">
+              <span class="loader"></span>
+            </div>
+          </div>
           <button
-            class="bg-light py-5 rounded mt-5 w-5/6 flex items-center justify-center ml-10"
+            class="bg-light py-5 rounded mt-5 w-5/6 flex items-center justify-center xl:ml-8 2xl:ml-10"
+            disabled
           >
             Show more connections
           </button>
@@ -352,9 +359,10 @@
         >
           <h3 class="text-xl pb-8 font-medium">Popular tags</h3>
 
-          <div class="flex flex-col gap-y-4">
-            <a
-              href="#"
+          <div class="flex flex-col gap-y-4" id="popular-tags-container">
+            <button
+              value="HTML"
+              id="html-btn"
               class="w-full h-20 flex items-center justify-center relative"
             >
               <img
@@ -365,10 +373,10 @@
               <span class="absolute text-white 2xl:text-xl font-base"
                 >#HTML</span
               >
-            </a>
+            </button>
 
-            <a
-              href="#"
+            <button
+              value="CSS"
               class="w-full h-20 flex items-center justify-center relative"
             >
               <img
@@ -379,10 +387,10 @@
               <span class="absolute text-white 2xl:text-xl font-base"
                 >#CSS</span
               >
-            </a>
+            </button>
 
-            <a
-              href="#"
+            <button
+              value="JavaScript"
               class="w-full h-20 flex items-center justify-center relative"
             >
               <img
@@ -393,10 +401,10 @@
               <span class="absolute text-white 2xl:text-xl font-base"
                 >#JavaScript</span
               >
-            </a>
+            </button>
 
-            <a
-              href="#"
+            <button
+              value="Bootstrap"
               class="w-full h-20 flex items-center justify-center relative"
             >
               <img
@@ -407,10 +415,10 @@
               <span class="absolute text-white 2xl:text-xl font-base"
                 >#Bootstrap</span
               >
-            </a>
+            </button>
 
-            <a
-              href="#"
+            <button
+              value="Tailwind"
               class="w-full h-20 flex items-center justify-center relative"
             >
               <img
@@ -421,13 +429,44 @@
               <span class="absolute text-white 2xl:text-xl font-base"
                 >#Tailwind</span
               >
-            </a>
+            </button>
           </div>
-          <button class="bg-light py-4 rounded w-full mt-3">
+          <button class="bg-light py-4 rounded w-full mt-3" disabled>
             Discover more tags
           </button>
         </section>
       </aside>
+    </div>
+
+    <a
+      href="#"
+      id="backButton"
+      class="fixed bottom-24 right-2 md:right-4 xl:right-60 2xl:right-1/4 items-center gap-5 hidden"
+    >
+      <span
+        class="rounded-full w-12 h-12 bg-light flex items-center justify-center"
+      >
+        <i class="fa-solid fa-chevron-up"></i>
+      </span>
+      <span class="hidden xl:inline-block">Back to top</span>
+    </a>
+    <!-- Modal container -->
+
+    <div
+      id="modal-container"
+      class="hidden mx-auto modal fixed z-50 items-center justify-center lg:left-[-3rem] bottom-0 h-full py-8 px-4 sm:p-10 lg:ml-12 min-w-full overflow-auto"
+    >
+      <div
+        class="relative max-w-3xl flex flex-col px-4 sm:px-12 py-6 sm:py-10 rounded-lg lg:ml-24 bg-white border modal-content w-full self-start"
+      >
+        <div class="flex justify-between items-center pb-1 md:pb-4">
+          <h2 class="text-xl lg:text-2xl font-medium" id="modal-header"></h2>
+          <i class="fa-solid fa-xmark text-xl cursor-pointer modal-close"></i>
+        </div>
+
+        <!--Modal body-->
+        <form class="modal-body"></form>
+      </div>
     </div>
 
     <!--Footer-->
@@ -437,9 +476,12 @@
         class="flex justify-between flex-col lg:flex-row max-w-3xl lg:max-w-5xl 2xl:max-w-full mx-auto wrapper py-6 md:py-4 mb-16 text-sm lg:mb-0 lg:pt-9 lg:pb-10 px-4 sm:px-10 md:px-12 lg:pl-36 2xl:pr-12"
       >
         <div>
-          <h2 class="text-xl md:text-2xl font-bold mb-3 sm:mb-8 lg:mb-0">
+          <a
+            href="/feed/index.html"
+            class="text-xl md:text-2xl font-bold mb-3 sm:mb-8 lg:mb-0"
+          >
             CodeUnity
-          </h2>
+          </a>
         </div>
 
         <div
@@ -449,39 +491,44 @@
             <h3 class="md:text-lg font-medium">Support</h3>
             <ul class="mt-2 space-y-2">
               <li>
-                <a
+                <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >FAQ</a
                 >
+                  FAQ
+                </p>
               </li>
               <li>
-                <a
+                <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >Online support</a
                 >
+                  Online support
+                </p>
               </li>
               <li>
-                <a
+                <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >Contact us</a
                 >
+                  Contact us
+                </p>
               </li>
               <li>
-                <a
+                <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >Account settings</a
                 >
+                  Account settings
+                </p>
               </li>
               <li>
-                <a
+                <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >Terms of use</a
                 >
+                  Terms of use
+                </p>
               </li>
             </ul>
           </div>
@@ -490,11 +537,12 @@
             <h3 class="md:text-lg font-medium">About</h3>
             <ul class="mt-2 space-y-2">
               <li>
-                <a
+                <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >About us</a
                 >
+                  About us
+                </p>
               </li>
             </ul>
           </div>
@@ -503,18 +551,20 @@
             <h3 class="md:text-lg font-medium">Privacy</h3>
             <ul class="mt-2 space-y-2">
               <li>
-                <a
+                <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >Privacy Settings</a
                 >
+                  Privacy Settings
+                </p>
               </li>
               <li>
-                <a
+                <p
                   href="#"
                   class="text-gray-300 hover:text-white text-sm md:text-base"
-                  >Guidelines</a
                 >
+                  Guidelines
+                </p>
               </li>
             </ul>
           </div>

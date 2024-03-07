@@ -1,6 +1,5 @@
 export default function editBannerAvatar(ele) {
   const container = document.createElement("div");
-  console.log(ele);
   const bannerContainer = document.createElement("div");
   bannerContainer.setAttribute(
     "class",
@@ -94,6 +93,6 @@ export default function editBannerAvatar(ele) {
     bannerImageLabel,
     bannerImageInput
   );
-  console.log("test");
+
   return container;
 }

@@ -6,8 +6,8 @@ import endpoints from "../../api/auth/data/endpoints/index.js";
 import filterPosts from "../../utils/helpers/filterPosts.js";
 import profileList from "../../utils/helpers/profileList.js";
 import createNewPost from "../../components/modal/specificModals/createNewPost.js";
+import popularTags from "./popularTags.js";
 import backToTop from "../../utils/helpers/backToTop.js";
-import noPosts from "./noPosts.js";
 
 const postsContainer = document.getElementById("posts-container");
 const sortPosts = document.getElementById("sort-posts");
@@ -18,29 +18,31 @@ export default async function pageSpecific() {
   const getRequest = await requests.get();
   const user = storage.load("profile");
 
-  const { data: posts } = await getRequest.fetch(endpoints.posts.byFollowing());
+  const { data: posts } = await getRequest.fetch(endpoints.posts.all());
 
-  if (posts.length > 0) {
-    posts.forEach((post) => {
-      postThumbnail(post, postsContainer);
-    });
+  posts.forEach((post) => {
+    postThumbnail(post, postsContainer);
+  });
+  console.log(sortPosts);
 
-    filterPosts(posts, sortPosts, postsContainer);
-  } else {
-    postsContainer.append(noPosts());
-  }
+  filterPosts(posts, sortPosts, postsContainer);
 
   const { data: profiles, meta: profilePage } = await getRequest.fetch(
     endpoints.profiles.all(100)
   );
 
   const profilesAll = await newPage(profilePage, profiles);
+  console.log(profilesAll);
 
   profileList(profilesAll, user, connectProfiles, 5);
+
+  console.log(profilesAll);
 
   document
     .getElementById("create-post-btn")
     .addEventListener("click", createNewPost);
+
+  console.log("test");
 
   async function newPage(prevPage, profiles) {
     while (!prevPage.isLastPage) {
@@ -51,6 +53,7 @@ export default async function pageSpecific() {
       prevPage = newPage;
     }
 
+    popularTags(getRequest, postsContainer);
     backToTop();
 
     return profiles;

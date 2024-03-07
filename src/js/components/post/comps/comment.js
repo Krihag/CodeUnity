@@ -1,12 +1,20 @@
 import formatDate from "../../../utils/helpers/formatDate.js";
 import storage from "../../../utils/storage.js";
+import requests from "../../../api/auth/requests/index.js";
+import deleteOptions from "../../modal/specificModals/deleteOptions.js";
 
-export default function displayComments(comments, isOwner = false) {
+export default function displayComments(post, isOwner = false) {
+  const comments = post.comments;
+
   const commentsContainer = document.createElement("div");
   commentsContainer.setAttribute("class", "displayComments");
 
   const user = storage.load("profile");
   if (comments && comments.length > 0) {
+    comments
+      .sort((a, b) => new Date(b.created) - new Date(a.created))
+      .reverse();
+
     comments.forEach((comment, index) => {
       const container = document.createElement("div");
       container.setAttribute(
@@ -37,7 +45,7 @@ export default function displayComments(comments, isOwner = false) {
       profileDetails.append(profileImg);
 
       const commentTextBox = document.createElement("div");
-      commentTextBox.setAttribute("class", "w-3/4");
+      commentTextBox.setAttribute("class", "w-full");
 
       const nameAndDelete = document.createElement("div");
       nameAndDelete.setAttribute("class", "flex justify-between");
@@ -51,15 +59,16 @@ export default function displayComments(comments, isOwner = false) {
       profileName.href = `/profile/?name=${comment.author.name}`;
 
       const usersComment = comment.author.name === user.name;
-      console.log(usersComment);
 
-      if (isOwner || usersComment) {
-        const deleteComment = document.createElement("button");
-        deleteComment.textContent = "Delete";
-        deleteComment.setAttribute("class", "text-primary text-sm");
+      if (usersComment) {
+        const deleteComment = document.createElement("a");
+
+        deleteComment.setAttribute(
+          "class",
+          "fa-solid fa-trash cursor-pointer text-gray-600 p-3"
+        );
         deleteComment.addEventListener("click", async () => {
-          await request.deleteComment(comment.id);
-          container.remove();
+          deleteOptions(post, comment);
         });
         nameAndDelete.append(profileName, deleteComment);
         commentTextBox.append(nameAndDelete);
@@ -73,7 +82,10 @@ export default function displayComments(comments, isOwner = false) {
       );
 
       const commentDate = document.createElement("p");
-      commentDate.setAttribute("class", "muted text-primary");
+      commentDate.setAttribute(
+        "class",
+        "text-xs md:text-sm lg:text-base muted text-primary"
+      );
       commentDate.textContent = formatDate(comment.created);
 
       commentTextBox.append(commentText, commentDate);
@@ -81,11 +93,6 @@ export default function displayComments(comments, isOwner = false) {
       container.append(commentAuthor);
       commentsContainer.append(container);
     });
-  } else {
-    const noComments = document.createElement("p");
-    noComments.textContent = "No comments yet";
-
-    commentsContainer.appendChild(noComments);
   }
 
   return commentsContainer;

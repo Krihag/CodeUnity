@@ -9,6 +9,10 @@ import searchbar from "../../utils/helpers/searchbar.js";
 const headerProfile = document.querySelector("#headerProfile");
 const logoutBtns = document.querySelectorAll(".logout-btn");
 
+const searchButton = document.querySelector("#search-button");
+const searchInput = document.querySelector("#search-input");
+const searchContainer = document.querySelector("#search-container");
+
 export default {
   enterPage() {
     const profile = storage.load("profile");
@@ -38,6 +42,19 @@ export default {
     headerProfile.append(headerProfileImage);
 
     searchbar();
+
+    searchButton.addEventListener("click", function () {
+      searchContainer.classList.toggle("w-80");
+      searchContainer.classList.toggle("h-16");
+      searchInput.classList.toggle("hidden");
+      searchInput.classList.toggle("flex");
+      searchInput.focus();
+      searchContainer.classList.toggle("absolute");
+
+      document
+        .getElementById("search-result-container")
+        .classList.add("hidden");
+    });
 
     document
       .querySelector("#create-post-mobile")

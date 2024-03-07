@@ -5,10 +5,14 @@ export default function commentInput(post) {
   container.setAttribute("class", "mt-4 flex items-center");
 
   const input = document.createElement("textarea");
-  input.placeholder = "Add a comment...";
+  if (post.comments.length === 0) {
+    input.placeholder = "Be the first to leave a comment..."
+  } else {
+    input.placeholder = "Add a comment...";
+  }
   input.setAttribute(
     "class",
-    "flex-grow border p-2 rounded-md outline-none h-16 resize-none"
+    "flex-grow border p-2 rounded-md outline-none h-16 resize-none text-sm md:text-base"
   );
 
   const button = document.createElement("button");
@@ -19,7 +23,7 @@ export default function commentInput(post) {
   svg.setAttributeNS(null, "viewBox", "0 0 24 24");
   svg.setAttributeNS(null, "stroke-width", "1.5");
   svg.setAttributeNS(null, "stroke", "currentColor");
-  svg.setAttributeNS(null, "class", "w-6 h-6"); // Corrected line
+  svg.setAttributeNS(null, "class", "w-6 h-6"); 
 
   const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
   path.setAttributeNS(null, "stroke-linecap", "round");
@@ -45,6 +49,8 @@ export default function commentInput(post) {
       );
     commentsCount.textContent++;
     input.value = "";
+
+    input.placeholder = "Add a comment...";
   });
 
   return container;

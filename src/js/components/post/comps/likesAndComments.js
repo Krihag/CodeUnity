@@ -19,7 +19,7 @@ export default function likesAndComments(post, fullPost = false) {
   );
 
   const likesIcon = document.createElement("i");
-  likesIcon.setAttribute("class", "fa-regular fa-heart text-2xl");
+  likesIcon.setAttribute("class", "fa-regular fa-heart text-xl lg:text-2xl");
 
   const likesCount = document.createElement("span");
   likesCount.textContent = post._count.reactions;
@@ -41,7 +41,7 @@ export default function likesAndComments(post, fullPost = false) {
   comments.href = `/post/?id=${post.id}`;
 
   const commentsIcon = document.createElement("i");
-  commentsIcon.setAttribute("class", "fa-regular fa-comment text-2xl");
+  commentsIcon.setAttribute("class", "fa-regular fa-comment text-xl lg:text-2xl");
 
   const commentsCount = document.createElement("span");
   commentsCount.setAttribute("id", "comments-count");
@@ -60,7 +60,7 @@ export default function likesAndComments(post, fullPost = false) {
     viewCommentsText.textContent = "View comments";
     viewCommentsText.setAttribute(
       "class",
-      "text-sm font-medium md:text-base md:font-normal"
+      "text-sm font-medium lg:text-base lg:font-normal"
     );
     container.classList.add("pr-12");
     viewComments.append(viewCommentsText);

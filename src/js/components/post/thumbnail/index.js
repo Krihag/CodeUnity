@@ -27,4 +27,6 @@ export default function (post, container) {
   postContainer.appendChild(commentInput(post));
 
   container.appendChild(postContainer);
+
+  return container;
 }
