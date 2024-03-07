@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta description="Welcome back to our coding community. Log in now to reconnect with fellow enthusiasts, access your personalized feed, and stay updated with the latest trends. Dive back into the world of coding with ease. Let's continue the journey together.">
+    
+    <title>CodeUnity | Log in</title>
+
+    <link rel="stylesheet" href="../dist/tailwind.css">
+    <link rel="stylesheet" href="../src/css/customStyles.css">
+
+    <script src="https://kit.fontawesome.com/b515e79b0f.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="../src/images/favicon.ico">
+
+    <script type="module" src="/src/js/pages/login/index.js"></script>
+
+  </head>
+  <body class="bg-background">
+    <main class="py-20 md:py-8 p px-6 xl:px-14 flex justify-center items-center gap-24 max-w-7xl mx-auto">
+      <div class="img-container hidden xl:flex flex-col relative w-full gap-8">
+
+<div class="flex gap-8 w-40">
+        <img src="src/images/logo-1.png" alt="">
+        <img src="src/images/logo-2.png" alt="">
+        <img src="src/images/logo-3.png" alt="">
+
+        </div>
+        <div class="flex gap-8 w-40"  >
+        <img src="src/images/logo-4.png" alt="">
+        <img src="src/images/logo-5.png" alt="">
+        <img src="src/images/logo-6.png" alt="">
+      </div>
+      <div class="flex gap-8 w-40"  >
+        <img src="src/images/logo-7.png" alt="">
+        <img src="src/images/logo-8.png" alt="">
+        <img src="src/images/logo-9.png" alt="">
+      </div>
+    
+  </div>
+    <section class="min-h-screen flex flex-col items-center lg:justify-center max-w-xl" >
+      <h1 class="text-3xl 2xl:text-4xl font-bold w-full pb-5 lg:pb-8">Log in.</h1>
+      <p class="2xl:text-lg pb-5 lg:pb-8 leading-relaxed">A community of coders. Sign in to your account and dive into latest posts while engaging in vibrant online discussions.</p>
+    <form
+      id="login-form"
+      method="post"
+      action="auth/login"
+      class=" w-full flex flex-col rounded-md gap-5  "
+    >
+      <div class="flex flex-col">
+        <label for="email" class="2xl:font-medium">Email:</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          class="py-1 px-3 rounded-sm border md:text-lg mt-1.5"
+          title="Must be a valid email address."
+          autocomplete="username"
+          required
+        />
+      </div>
+
+      <div class="flex flex-col mt-4 relative"> 
+        <label for="password" class="2xl:font-medium">Password:</label>
+        <input type="password" id="password" name="password" class="rounded-sm py-1 px-3 border md:text-lg mt-1.5" autocomplete="current-password" minlength="8" required>
+        <i id="toggleButton" class="absolute bottom-2 right-5 cursor-pointer fa-regular fa-eye text-primary text-lg"></i>
+      </div>
+
+      <div class="flex justify-between items-center">
+        <div class="flex gap-3 items-center justify-center">
+          <input
+            type="checkbox"
+            class="center w-5 h-5 rounded-sm bg-white checked:bg-primary-light focus:outline-none border-gray-200"
+          />
+          <label for="checkbox">Remember me</label>
+        </div>
+        <a href="#" class="text-sm text-secondary">Forgot your password?
+        
+        </a>
+      </div>
+      <button class="bg-secondary py-2 mt-2 w-32 text-white rounded-md">Login</button>
+      <div class="2xl:mt-5">Don't have an account yet? <a href="/register/index.html" class="border-b border-secondary text-secondary">Sign up</a></div>
+    </form>
+  </section>
+  </body>
+</main>
+</html>
