@@ -40,8 +40,7 @@ export default async function pageSpecific() {
   const { data: profilePosts } = await getRequest.fetch(
     endpoints.posts.byProfile(name)
   );
-  console.log(profile);
-  console.log(profilePosts);
+
   const { data: allPosts } = await getRequest.fetch(endpoints.posts.all());
   if (profilePosts.length > 0) {
     profilePosts.forEach((post) => postTemp(post, postContainer));

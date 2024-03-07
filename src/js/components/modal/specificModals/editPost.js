@@ -7,7 +7,6 @@ export default function editPost(post) {
 
   const formId = "edit-post";
   let tags = post.tags;
-  console.log(tags);
 
   const updateTags = update.updateValue(tags);
 

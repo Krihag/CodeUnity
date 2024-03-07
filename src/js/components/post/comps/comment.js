@@ -59,7 +59,6 @@ export default function displayComments(post, isOwner = false) {
       profileName.href = `/profile/?name=${comment.author.name}`;
 
       const usersComment = comment.author.name === user.name;
-      console.log(usersComment);
 
       if (usersComment) {
         const deleteComment = document.createElement("a");

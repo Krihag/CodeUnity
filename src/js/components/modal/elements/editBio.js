@@ -1,8 +1,6 @@
 export default function editBio(ele) {
   const container = document.createElement("div");
 
-  console.log(ele);
-
   const biographyLabel = document.createElement("label");
   biographyLabel.setAttribute("for", "biography");
   biographyLabel.setAttribute("class", "lg:text-lg");

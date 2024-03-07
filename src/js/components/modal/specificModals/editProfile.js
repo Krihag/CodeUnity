@@ -13,10 +13,10 @@ export default function editProfile(profile) {
     avatar: { url: profile.avatar.url, alt: profile.avatar.alt },
   };
 
-  const element2 = {
-    type: "biography",
-    value: profile.bio,
-  };
+  // const element2 = {
+  //   type: "biography",
+  //   value: profile.bio,
+  // };
 
   const element3 = {
     type: "buttons",
@@ -26,7 +26,7 @@ export default function editProfile(profile) {
     },
   };
 
-  elements.push(element1, element2, element3);
+  elements.push(element1, element3);
 
   const data = { title, elements, formId: "edit-profile" };
 

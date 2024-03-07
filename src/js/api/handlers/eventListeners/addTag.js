@@ -1,27 +1,21 @@
 import update from "../../update/index.js";
+import displayError from "../../../utils/helpers/displayError.js";
 
 export default function addTag(updateTags, btn, input, container) {
   const allTags = updateTags.getValue();
-  console.log(allTags);
-
-  // const allTags = ["CodeUnity"];
-  console.log(allTags);
 
   btn.addEventListener("click", (e) => {
     e.preventDefault();
 
     if (input.value === "") {
-      console.log("Please enter a tag");
       return;
     }
 
     if (allTags.length > 5) {
-      console.log("You can not add more than 5 tags.");
       return;
     }
     if (input.checkValidity()) {
       if (allTags.includes(input.value)) {
-        console.log("Tag already exists");
         return;
       }
       const newTag = document.createElement("div");
@@ -58,10 +52,10 @@ export default function addTag(updateTags, btn, input, container) {
         newTag.remove();
       });
       allTags.push(input.value);
-      console.log(allTags);
+
       container.append(newTag);
     } else {
-      console.log("Invalid tag input. Please try again.");
+      displayError("Invalid tag input. Please try again.");
     }
 
     input.value = "";

@@ -35,17 +35,12 @@ export default async function pageSpecific() {
   );
 
   const profilesAll = await newPage(profilePage, profiles);
-  console.log(profilesAll);
 
   profileList(profilesAll, user, connectProfiles, 5);
-
-  console.log(profilesAll);
 
   document
     .getElementById("create-post-btn")
     .addEventListener("click", createNewPost);
-
-  console.log("test");
 
   async function newPage(prevPage, profiles) {
     while (!prevPage.isLastPage) {

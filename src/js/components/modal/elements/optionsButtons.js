@@ -2,7 +2,6 @@ import modal from "../../../api/handlers/eventListeners/modalToggle.js";
 import update from "../../../api/update/index.js";
 
 export default function optionsButton(ele) {
-  console.log(ele);
   const optionOne = ele.optionOne ? ele.optionOne.text : "Cancel";
   const optionTwo = ele.optionTwo ? ele.optionTwo.text : "Save";
 

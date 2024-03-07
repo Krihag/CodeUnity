@@ -25,8 +25,6 @@ export default function profileList(profiles, user, container, number = 5) {
     const profile = profiles[num];
     container.appendChild(singleProfile(profile));
   });
-
-  console.log(container);
 }
 
 function singleProfile(profile) {

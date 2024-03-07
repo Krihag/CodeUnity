@@ -77,7 +77,6 @@ export default class EventListener {
 
         tags && (data.tags = tags);
 
-        console.log(data);
         authRequest(data, confirmMessage);
         form.reset();
       } catch (error) {
