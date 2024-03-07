@@ -42,6 +42,14 @@ https://trello.com/b/re3pcLV0/javascript-2
 ![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
+## REPORT 
+We have made a small report from our collaboration, describing the coding process and collaboration further. 
+https://docs.google.com/document/d/1OlZChDgLvEp-hA2xzaR4nF0ZfAEaE79VeKo-FI6xlO8/edit
+
+## FIGMA 
+The design was made through Figma. 
+https://www.figma.com/file/A4c5JS8j2WcDvPupUVkb4I/CodeUnity?type=design&node-id=0-1&mode=design&t=9bmMIt7O5N31U6U5-0
+
 ## GET STARTED
 
 ### Installing
