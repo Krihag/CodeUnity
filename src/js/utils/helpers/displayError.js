@@ -4,7 +4,7 @@ export default function displayError(text, time = 7000) {
   const confirmation = document.createElement("div");
   confirmation.setAttribute(
     "class",
-    "alert flex w-86 max-w-86 px-6 py-4 rounded-md items-center gap-x-3 fixed bottom-28 left-40 md:left-60 bg-red-200 confirmation-alert border-2 border-red-400"
+    "alert flex w-86 max-w-86 px-6 py-4 rounded-md items-center gap-x-3 fixed bottom-28  left-10 sm:left-40 md:left-60 bg-red-200 confirmation-alert border-2 border-red-400"
   );
 
   const confirmationBox = document.createElement("span");
